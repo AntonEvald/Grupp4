@@ -1,4 +1,7 @@
-﻿namespace DatingProj.Models
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+
+
+namespace DatingProj.Models
 {
     public class FriendRequest
     {
