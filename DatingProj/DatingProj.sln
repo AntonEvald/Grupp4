@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingProj", "DatingProj\DatingProj.csproj", "{9C3DDB9C-E030-4FC7-91CE-F37FBC2B736C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBase", "DataBase\DataBase.csproj", "{B70324DC-F3A1-4CB7-9A91-B2B92F15B6A6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "DataBase\Logic.csproj", "{B70324DC-F3A1-4CB7-9A91-B2B92F15B6A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
