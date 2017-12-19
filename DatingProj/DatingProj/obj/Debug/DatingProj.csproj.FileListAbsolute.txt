@@ -117,3 +117,6 @@ C:\Users\anton\Source\Repos\Grupp4\DatingProj\DatingProj\obj\Debug\DatingProj.cs
 C:\Users\anton\Source\Repos\Grupp4\DatingProj\DatingProj\obj\Debug\DatingProj.csproj.CoreCompileInputs.cache
 C:\Users\anton\Source\Repos\Grupp4\DatingProj\DatingProj\obj\Debug\DatingProj.dll
 C:\Users\anton\Source\Repos\Grupp4\DatingProj\DatingProj\obj\Debug\DatingProj.pdb
+C:\Users\anton\source\repos\Grupp4\DatingProj\DatingProj\bin\DataBase.dll
+C:\Users\anton\source\repos\Grupp4\DatingProj\DatingProj\bin\DataBase.pdb
+C:\Users\anton\source\repos\Grupp4\DatingProj\DatingProj\bin\DataBase.dll.config
