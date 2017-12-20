@@ -63,3 +63,4 @@ C:\Users\Andre\Source\Repos\Grupp42\DatingProj\DataBase\bin\Debug\System.Web.Raz
 C:\Users\Andre\Source\Repos\Grupp42\DatingProj\DataBase\bin\Debug\System.Web.WebPages.xml
 C:\Users\Andre\Source\Repos\Grupp42\DatingProj\DataBase\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\Andre\Source\Repos\Grupp42\DatingProj\DataBase\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\Anton\Source\Repos\Grupp4\DatingProj\DataBase\obj\Debug\Logic.csprojResolveAssemblyReference.cache
