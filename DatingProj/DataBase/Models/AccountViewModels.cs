@@ -70,7 +70,6 @@ namespace DatingProj.Models
         public string Email { get; set; }
 
         [Required]
-        [EmailAddress]
         [Display(Name = "First and last name")]
         public string Name { get; set; }
 
