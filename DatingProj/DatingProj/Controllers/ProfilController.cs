@@ -46,8 +46,9 @@ namespace DatingProj.Controllers
                 {
                     db.SaveChanges();
                 }
-                return View();
-            
+
+            return RedirectToAction("Index");
+
         }
     }
 }
