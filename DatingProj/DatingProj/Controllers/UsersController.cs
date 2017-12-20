@@ -13,29 +13,24 @@ namespace DatingProj.Controllers
         // GET: Users
         public ActionResult Index()
         {
-            if (User.Identity.IsAuthenticated)
-            {
-                var users = db.Users.ToList();
-                return View(users);
-            }
-            else
-            {
-                return RedirectToAction("Register", "Account");
-            }
+
+            var users = db.Users.ToList();
+            return View(users);
+
         }
 
         public ActionResult UserProfil(string id)
         {
+
             if (id == User.Identity.GetUserId())
             {
                 return RedirectToAction("Index", "Profil");
-            } 
+            }
             else
             {
                 var userprofile = db.Users.Single(x => x.Id == id);
                 return View(userprofile);
             }
-
         }
 
     }
