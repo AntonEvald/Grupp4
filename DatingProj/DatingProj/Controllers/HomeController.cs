@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace DatingProj.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public ActionResult Index()
         {
@@ -15,14 +15,14 @@ namespace DatingProj.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "1337 Gaming description.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Contact us!";
 
             return View();
         }
