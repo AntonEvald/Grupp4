@@ -5,26 +5,33 @@
 }
 
 <h2>Index</h2>
-
-
-<table class="table">
-    <tr>
-      
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model)
+@using (Html.BeginForm("Index", "Users", FormMethod.Get, new { @class = "form-horizontal", role = "form" }))
 {
-
-    <tr>
-       
-        <td>
-            @Html.DisplayFor(modelItem => item.Name) : @Html.ActionLink("Go to Profil","UserProfil","Users", new { id = item.Id }, new { })
-        </td>
-    </tr>
+    <div class="form-group">
+        <h4>Search Profile</h4>
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model);
+        </div>
+    </div>
 }
+    <table class="table">
+        <tr>
 
-</table>
+            <th>
+                @Html.DisplayNameFor(model => model.)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name) : @Html.ActionLink("Go to Profil", "UserProfil", "Users", new { id = item.Id }, new { })
+                </td>
+            </tr>
+        }
+
+    </table>

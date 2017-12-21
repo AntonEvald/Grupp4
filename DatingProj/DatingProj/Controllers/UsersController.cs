@@ -11,14 +11,21 @@ namespace DatingProj.Controllers
     public class UsersController : BaseController
     {
         // GET: Users
-        public ActionResult Index()
+        
+        public ActionResult Index(string searchString = "")
         {
-
             var users = db.Users.ToList();
-            return View(users);
-
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                var searchResult =  users.Where(x => x.Name.Contains(searchString));
+                return View(searchResult);
+            }
+            else
+            {
+                return View(users);
+            }
+          
         }
-
         public ActionResult UserProfil(string id)
         {
 
