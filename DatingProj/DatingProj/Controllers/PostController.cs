@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using DatingProj.Models;
 using Microsoft.AspNet.Identity;
+using System.Data.Entity;
 
 namespace DatingProj.Controllers
 {
@@ -13,7 +14,7 @@ namespace DatingProj.Controllers
         // GET: Post
         public ActionResult Index(string id)
         {
-            var posts = db.Posts.Where(x => x.ToUser.Id == id).ToList();
+            var posts = db.Posts.Include(X => X.FromUser).Where(x => x.ToUser.Id == id).ToList();
             return View(new PostIndexViewModel { Id = id, Posts = posts });
         }
 
