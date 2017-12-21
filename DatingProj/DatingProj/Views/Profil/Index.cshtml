@@ -10,7 +10,7 @@
     <h4>ApplicationUser</h4>
     <hr />
     <dl class="dl-horizontal">
-        
+
         <dt>
             @Html.DisplayNameFor(model => model.Description)
         </dt>
@@ -21,7 +21,10 @@
 
     </dl>
     <p>
-        @Html.ActionLink("Edit profil","Edit","Profil")
+        @Html.ActionLink("Edit profil", "Edit", "Profil")
+    </p>
+    <p>
+        @Html.ActionLink("Posts", "Index", "post", new { id = Model.Id }, new { })
     </p>
 </div>
 
