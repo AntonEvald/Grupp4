@@ -13,6 +13,7 @@ namespace DatingProj.Models
     {
         public string Name { get; set; }
         public string Description { get; set; }
+        public byte[] UserPhoto { get; set; }
 
         
         public virtual ICollection<Posts> posts { get; set; }
