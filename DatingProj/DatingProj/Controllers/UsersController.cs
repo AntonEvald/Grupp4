@@ -12,19 +12,16 @@ namespace DatingProj.Controllers
     {
         // GET: Users
         
-        public ActionResult Index(string searchString = "")
+        public ActionResult Index(string searchString)
         {
             var users = db.Users.ToList();
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                var searchResult =  users.Where(x => x.Name.Contains(searchString));
-                return View(searchResult);
-            }
-            else
-            {
-                return View(users);
-            }
-          
+            
+                if (!string.IsNullOrEmpty(searchString))
+                {
+                    List<Models.ApplicationUser> filteredList = users.Where(User => User.Name.Contains(searchString)).Cast<Models.ApplicationUser>().ToList();
+                    return View(filteredList);
+                }
+            return View(users);
         }
         public ActionResult UserProfil(string id)
         {
@@ -39,6 +36,7 @@ namespace DatingProj.Controllers
                 return View(userprofile);
             }
         }
-
+      
+      
     }
 }
