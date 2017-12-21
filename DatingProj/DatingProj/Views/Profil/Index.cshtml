@@ -1,4 +1,5 @@
-﻿@model DatingProj.Models.ApplicationUser
+﻿@using Microsoft.AspNet.Identity
+@model DatingProj.Models.ApplicationUser
 
 @{
     ViewBag.Title = "Index";
@@ -20,9 +21,14 @@
         </dd>
 
     </dl>
-    <p>
-        @Html.ActionLink("Edit profil", "Edit", "Profil")
-    </p>
+    
+    @if (Model.Id == User.Identity.GetUserId())
+    {
+        <p>
+            @Html.ActionLink("Edit profil", "Edit", "Profil")
+        </p>
+    }
+
     <p>
         @Html.ActionLink("Posts", "Index", "post", new { id = Model.Id }, new { })
     </p>
