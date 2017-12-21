@@ -4,27 +4,34 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Profiles</h2>
 
+@Html.BeginForm("Index","Users", FormMethod.Get, new { })
+
+    <p> Search Profiles: 
+        @Html.TextBox("searchString")
+        <input type="submit" value="Search" class="btn btn-default" /> | 
+        @Html.ActionLink("Go back to full list", "Index")
+    </p>
 
 <table class="table">
     <tr>
-      
+
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model)
-{
+    @foreach (var item in Model)
+    {
 
-    <tr>
-       
-        <td>
-            @Html.DisplayFor(modelItem => item.Name) : @Html.ActionLink("Go to Profil","index","Profil", new { id = item.Id }, new { })
-        </td>
-    </tr>
-}
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Name) : @Html.ActionLink("Go to Profil", "UserProfil", "Users", new { id = item.Id }, new { })
+            </td>
+        </tr>
+    }
 
 </table>
