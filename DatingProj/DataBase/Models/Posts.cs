@@ -1,4 +1,6 @@
-﻿namespace DatingProj.Models
+﻿using System;
+
+namespace DatingProj.Models
 {
     public class Posts
     {
