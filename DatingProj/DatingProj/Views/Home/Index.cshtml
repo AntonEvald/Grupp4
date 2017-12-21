@@ -6,7 +6,7 @@
 {
     <div class="jumbotron">
         <h1>
-            Welcome 
+            Welcome @Html.DisplayFor(model => model.Name)
             <img src="@Url.Action("UserPhotos", "Home" )" style="width:160px;height:160px; background: #FFFFFF;
             margin: auto;
             -moz-border-radius: 60px;
@@ -14,17 +14,22 @@
             padding: 6px;
             box-shadow: 0px 0px 20px #888;" />
         </h1>
-        <h2>@Html.DisplayFor(model => model.Name)</h2>
-        <p class="lead">Find gamers in your area now!</p>
-        <p><a>@Html.ActionLink("Find users", "Index", "Users", routeValues: null, htmlAttributes: new { id = "FindUsersLink" })</a></p>
+        <p><a>@Html.ActionLink("Find gamers in your area now!", "Index", "Users", routeValues: null, htmlAttributes: new { id = "FindUsersLink" })</a></p>
     </div>
 
     <div class="row">
         <div class="col-md-4">
             <a href="@Url.Action("Index", "Users")">
-                <img class="img-thumbnail" src="http://www.reaxxion.com/wp-content/uploads/2014/11/Gamer-Girl-667x519.jpg">
+                <img src="@Url.Action("UserPhotos", "Home" )" style="width:160px;height:160px; background: #FFFFFF;
+                margin: auto;
+                -moz-border-radius: 60px;
+                border-radius: 100px;
+                padding: 6px;
+                box-shadow: 0px 0px 20px #888;" />
             </a>
         </div>
+
+
         <div class="col-md-4">
             <a href="@Url.Action("Index", "Users")">
                 <img class="img-thumbnail" src="http://www.reaxxion.com/wp-content/uploads/2014/11/Gamer-Girl-667x519.jpg">

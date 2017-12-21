@@ -14,7 +14,18 @@ namespace DatingProj.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            if (User.Identity.IsAuthenticated)
+            {
+                var userName = User.Identity.Name;
+
+                var user = db.Users.Single(x => x.UserName == userName);
+                return View(user);
+            }
+            else
+            {
+                return View();
+            }
+            
         }
 
         public ActionResult About()
