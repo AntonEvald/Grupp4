@@ -18,20 +18,12 @@ namespace DatingProj.Controllers
         // GET: Profil
         public ActionResult Index()
         {
-
-            if (User.Identity.IsAuthenticated)
-            {
+ 
                 var userName = User.Identity.Name;
 
                 var user = db.Users.Single(x => x.UserName == userName);
                 return View(user);
-            }
-            else
-            {
-                return RedirectToAction("Register", "Account");
-            }
-  
-            
+
         }
 
         public ActionResult Edit()
