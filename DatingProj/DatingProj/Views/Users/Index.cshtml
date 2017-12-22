@@ -6,14 +6,15 @@
 
 <h2>Profiles</h2>
 
-@Html.BeginForm("Index","Users", FormMethod.Get, new { })
-
-    <p> Search Profiles: 
+@using(@Html.BeginForm("Index", "Users", FormMethod.Get))
+{
+    <p>
+        Search Profiles:
         @Html.TextBox("searchString")
-        <input type="submit" value="Search" class="btn btn-default" /> | 
+        <input type="submit" value="Search" class="btn btn-default" /> |
         @Html.ActionLink("Go back to full list", "Index")
     </p>
-
+}
 <table class="table">
     <tr>
 
