@@ -1,4 +1,4 @@
-﻿@model DatingProj.Models.ApplicationUser
+﻿
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
@@ -12,9 +12,7 @@
             <li>
                 @Html.ActionLink("Find users", "Index", "Users")
             </li>
-            <li>
-                @Html.ActionLink(Html.DisplayFor(model => model.Name).ToString(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-            </li>
+          
             <li>
                 <img src="@Url.Action("UserPhotos", "Home" )" height="48" width="48" />
 

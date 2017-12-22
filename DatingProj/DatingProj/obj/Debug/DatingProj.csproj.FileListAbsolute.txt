@@ -486,3 +486,9 @@ C:\Users\phili\Source\Repos\Grupp4\DatingProj\DatingProj\obj\Debug\DatingProj.cs
 C:\Users\phili\Source\Repos\Grupp4\DatingProj\DatingProj\obj\Debug\DatingProj.csproj.CoreCompileInputs.cache
 C:\Users\phili\Source\Repos\Grupp4\DatingProj\DatingProj\obj\Debug\DatingProj.dll
 C:\Users\phili\Source\Repos\Grupp4\DatingProj\DatingProj\obj\Debug\DatingProj.pdb
+C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DatingProj\bin\System.Net.Http.Formatting.dll
+C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DatingProj\bin\System.Web.Http.dll
+C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DatingProj\bin\System.Web.Http.WebHost.dll
+C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DatingProj\bin\System.Net.Http.Formatting.xml
+C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DatingProj\bin\System.Web.Http.xml
+C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DatingProj\bin\System.Web.Http.WebHost.xml
