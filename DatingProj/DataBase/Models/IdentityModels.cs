@@ -36,19 +36,4 @@ namespace DatingProj.Models
         public IEnumerable<ApplicationUser> users { get; set; }
     }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
-    {
-        public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
-        {
-        }
-
-        public static ApplicationDbContext Create()
-        {
-            return new ApplicationDbContext();
-        }
-
-        public DbSet<Posts> Posts { get; set; }
-    }
-
 }
