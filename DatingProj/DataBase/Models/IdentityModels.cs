@@ -30,6 +30,12 @@ namespace DatingProj.Models
         }
     }
 
+    public class ViewModel
+    {
+        public ApplicationUser user { get; set; }
+        public IEnumerable<ApplicationUser> users { get; set; }
+    }
+
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
