@@ -19,11 +19,22 @@ namespace DatingProj.Controllers
                 var userName = User.Identity.Name;
 
                 var user = db.Users.Single(x => x.UserName == userName);
-                return View(user);
+
+                var users = db.Users.ToList();
+                return View(new ViewModel
+                {
+                    user = user,
+                    users = users
+                });
             }
             else
             {
-                return View();
+                var users = db.Users.ToList();
+                return View(new ViewModel
+                {
+                    user = null,
+                    users = users
+                });
             }
             
         }
