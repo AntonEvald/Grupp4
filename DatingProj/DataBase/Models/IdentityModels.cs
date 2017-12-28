@@ -6,6 +6,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections;
 using System.Collections.Generic;
+using DataBase.Models;
 
 namespace DatingProj.Models
 {

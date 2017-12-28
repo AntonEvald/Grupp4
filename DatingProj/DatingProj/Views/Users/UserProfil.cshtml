@@ -9,6 +9,11 @@
 
 <div>
     <h4>ApplicationUser</h4>
+    
+    <div>
+        <input type="button" onclick="SendRequest('@Model.Id')" />
+    </div>
+
     <hr />
     <dl class="dl-horizontal">
 
@@ -23,3 +28,15 @@
     </dl>
     @Html.ActionLink("Posts", "Index","post", new { id = Model.Id }, new { })
 </div>
+<script>
+
+    function SendRequest(id) {
+        $.ajax({
+            url: 'FriendsController',
+            data: { id: id }
+    }).done(function() {
+            alert('Added'); 
+        });
+    }
+
+</script>
