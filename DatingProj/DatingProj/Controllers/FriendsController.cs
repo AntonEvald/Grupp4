@@ -26,7 +26,7 @@ namespace DatingProj.Controllers
            var Request = new Friend{ FriendFrom = User.Identity.GetUserId(), FriendTo = id, IsConfirmed = false};
             db.Friends.Add(Request);
             db.SaveChanges();
-            return new EmptyResult();
+            return RedirectToAction("UserProfil", "Users", new { id = id });
         }
 
         public ActionResult Index()

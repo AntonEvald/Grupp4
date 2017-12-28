@@ -1,4 +1,5 @@
-﻿@model DatingProj.Models.ApplicationUser
+﻿@using Microsoft.AspNet.Identity
+@model DatingProj.Models.ApplicationUser
 
 @{
     ViewBag.Title = "UserProfil";
@@ -9,10 +10,18 @@
 
 <div>
     <h4>ApplicationUser</h4>
+    
+    @if (Model.Senders.Any(u => u.FriendFrom == User.Identity.GetUserId()))
+    {
 
-    <div>
-        @Html.ActionLink("Send Friend request","SendRequest","Friends", new { id = Model.Id }, new { })
-    </div>
+    }
+    else
+    {
+        <div>
+            @Html.ActionLink("Send Friend request","SendRequest","Friends", new { id = Model.Id }, new { })
+        </div>
+    }
+
 
     <hr />
     <dl class="dl-horizontal">

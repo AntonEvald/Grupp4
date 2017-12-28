@@ -242,4 +242,3 @@ C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DataBase\bin\Debug\Microsoft.AspNe
 C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DataBase\bin\Debug\Microsoft.Owin.Security.Cookies.xml
 C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DataBase\bin\Debug\Microsoft.Owin.Security.OAuth.xml
 C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DataBase\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DataBase\obj\Debug\Logic.csprojResolveAssemblyReference.cache
