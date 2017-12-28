@@ -26,10 +26,21 @@ namespace DataBase.Models
         protected override void OnModelCreating(DbModelBuilder modelbuilder)
         {
             modelbuilder.Entity<ApplicationUser>().HasMany(x => x.posts).WithRequired(x => x.ToUser);
+            modelbuilder.Entity<ApplicationUser>()
+                .HasMany(e => e.Senders)
+                .WithRequired()
+                .HasForeignKey(e => e.FriendTo)
+                .WillCascadeOnDelete(false);
 
+            modelbuilder.Entity<ApplicationUser>()
+                .HasMany(e => e.Receivers)
+                .WithRequired()
+                .HasForeignKey(e => e.FriendFrom)
+                .WillCascadeOnDelete(false);
             base.OnModelCreating(modelbuilder);
         }
         public DbSet<Posts> Posts { get; set; }
+        public DbSet<Friend> Friends { get; set; }
     }
 
     public class MyInitializer : DropCreateDatabaseIfModelChanges<ApplicationDbContext>

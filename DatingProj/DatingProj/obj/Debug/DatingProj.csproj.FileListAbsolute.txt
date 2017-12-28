@@ -330,7 +330,6 @@ C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DatingProj\bin\System.Web.WebPages
 C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DatingProj\bin\System.Web.WebPages.Razor.dll
 C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DatingProj\bin\WebGrease.dll
 C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DatingProj\bin\DataBase.pdb
-C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DatingProj\bin\DataBase.dll.config
 C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DatingProj\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DatingProj\bin\Microsoft.Owin.xml
 C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DatingProj\bin\System.Web.Helpers.xml
