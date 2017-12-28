@@ -36,7 +36,7 @@ namespace DataBase.Models
                 .HasMany(e => e.Receivers)
                 .WithRequired()
                 .HasForeignKey(e => e.FriendFrom)
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(true);
             base.OnModelCreating(modelbuilder);
         }
         public DbSet<Posts> Posts { get; set; }
