@@ -6,6 +6,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using DataBase.Models;
 
 namespace DatingProj.Models
@@ -19,8 +21,8 @@ namespace DatingProj.Models
 
         
         public virtual ICollection<Posts> posts { get; set; }
-        public virtual ICollection<ApplicationUser> friends { get; set; }
-        public virtual ICollection<FriendRequest> friendRequest { get; set; }
+        public virtual ICollection<Friend> Senders { get; set; }
+        public virtual ICollection<Friend> Receivers { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -36,5 +38,18 @@ namespace DatingProj.Models
         public ApplicationUser user { get; set; }
         public IEnumerable<ApplicationUser> users { get; set; }
     }
+
+    public class Friend
+    {
+        public int ID { get; set; }
+        public bool IsConfirmed { get; set; }
+        [Key]
+        [Column(Order = 1)]
+        public string FriendFrom { get; set; }
+        [Key]
+        [Column(Order = 2)]
+        public string FriendTo { get; set; }
+    }
+
 
 }

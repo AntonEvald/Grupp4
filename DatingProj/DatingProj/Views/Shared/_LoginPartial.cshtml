@@ -5,20 +5,23 @@
     {
         @Html.AntiForgeryToken()
 
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-                @Html.ActionLink("Min profil", "Index", "Profil")
-            </li>
-            <li>
-                @Html.ActionLink("Find users", "Index", "Users")
-            </li>
-          
-            <li>
-                <img src="@Url.Action("UserPhotos", "Home" )" height="48" width="48" />
+<ul class="nav navbar-nav navbar-right">
+    <li>
+        @Html.ActionLink("Min profil", "Index", "Profil")
+    </li>
+    <li>
+        @Html.ActionLink("Min Vänlista", "Index", "Friends")
+    </li>
+    <li>
+        @Html.ActionLink("Find users", "Index", "Users")
+    </li>
 
-            </li>
-            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-        </ul>
+    <li>
+        <img src="@Url.Action("UserPhotos", "Home" )" height="48" width="48" />
+
+    </li>
+    <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+</ul>
     }
 }
 else

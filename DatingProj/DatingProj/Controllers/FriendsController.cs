@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DatingProj.Models;
 using Microsoft.Ajax.Utilities;
 using Microsoft.AspNet.Identity;
 
@@ -16,11 +18,15 @@ namespace DatingProj.Controllers
 
             var you = db.Users.Single(x => x.Id == id);
             var me = db.Users.Single(z => z.Id == User.Identity.GetUserId());
-
-            me.friends.Add(you);
-            db.SaveChanges();
-
             return View();
+        }
+
+        public ActionResult Index()
+        {
+            var id = User.Identity.GetUserId();
+            var friends = db.Friends.Where(z => z.FriendTo == id && z.IsConfirmed == true).ToList();
+            return View(friends);
+
         }
     }
 }

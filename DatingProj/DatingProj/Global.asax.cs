@@ -16,6 +16,7 @@ namespace DatingProj
         protected void Application_Start()
         {
 
+            //Database.SetInitializer(new DropCreateDatabaseAlways<ApplicationDbContext>());
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ApplicationDbContext>());
             //Database.SetInitializer(new MyInitializer());
             AreaRegistration.RegisterAllAreas();
