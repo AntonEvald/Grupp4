@@ -10,15 +10,23 @@ using Microsoft.AspNet.Identity;
 
 namespace DatingProj.Controllers
 {
+    
     public class FriendsController : BaseController
     {
-        // GET: Friends
-        public  ActionResult SendFriendRequest(string id)
+        [HttpPost]
+        public void  SendFriendRequest(string id)
         {
 
             var you = db.Users.Single(x => x.Id == id);
             var me = db.Users.Single(z => z.Id == User.Identity.GetUserId());
-            return View();
+        }
+
+        public ActionResult SendRequest(string id)
+        {
+           var Request = new Friend{ FriendFrom = User.Identity.GetUserId(), FriendTo = id, IsConfirmed = false};
+            db.Friends.Add(Request);
+            db.SaveChanges();
+            return new EmptyResult();
         }
 
         public ActionResult Index()

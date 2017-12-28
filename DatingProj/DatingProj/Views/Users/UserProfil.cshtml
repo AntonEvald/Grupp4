@@ -9,9 +9,9 @@
 
 <div>
     <h4>ApplicationUser</h4>
-    
+
     <div>
-        <input type="button" value="Follow" onclick="SendRequest('@Model.Id')" />
+        @Html.ActionLink("Send Friend request","SendRequest","Friends", new { id = Model.Id }, new { })
     </div>
 
     <hr />
