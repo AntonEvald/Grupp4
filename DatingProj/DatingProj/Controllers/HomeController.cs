@@ -1,4 +1,5 @@
-﻿using DatingProj.Models;
+﻿using DataBase.Models;
+using DatingProj.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using System;
@@ -61,7 +62,7 @@ namespace DatingProj.Controllers
 
                 if(userid == null)
                 {
-                    string filename = HttpContext.Server.MapPath(@"~/Images/noImg.png");
+                    string filename = Path.Combine(HttpRuntime.AppDomainAppPath, "Images/NoImg.jpg");
                     byte[] imageData = null;
                     FileInfo fileInfo = new FileInfo(filename);
                     long imageFileLength = fileInfo.Length;
@@ -74,9 +75,10 @@ namespace DatingProj.Controllers
                 var bdUsers = HttpContext.GetOwinContext().Get<ApplicationDbContext>();
                 var userImage = bdUsers.Users.Where(x => x.Id == userid).FirstOrDefault();
                 return new FileContentResult(userImage.UserPhoto, "image/jpeg");
-            } else
+            }
+            else
             {
-                string filename = HttpContext.Server.MapPath(@"~/Images/noImg.png");
+                string filename  = Path.Combine(HttpRuntime.AppDomainAppPath, "Images/NoImg.jpg");
                 byte[] imageData = null;
                 FileInfo fileInfo = new FileInfo(filename);
                 long imageFileLength = fileInfo.Length;
