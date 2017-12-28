@@ -11,7 +11,7 @@
     <h4>ApplicationUser</h4>
     
     <div>
-        <input type="button" onclick="SendRequest('@Model.Id')" />
+        <input type="button" value="Follow" onclick="SendRequest('@Model.Id')" />
     </div>
 
     <hr />
@@ -28,15 +28,8 @@
     </dl>
     @Html.ActionLink("Posts", "Index","post", new { id = Model.Id }, new { })
 </div>
-<script>
+@section scripts
+{
+<script type="text/javascript" src="@Url.Content("/Scripts/Friends.js")"></script>
 
-    function SendRequest(id) {
-        $.ajax({
-            url: 'FriendsController',
-            data: { id: id }
-    }).done(function() {
-            alert('Added'); 
-        });
-    }
-
-</script>
+}
