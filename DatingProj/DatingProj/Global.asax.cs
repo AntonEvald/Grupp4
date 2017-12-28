@@ -17,7 +17,7 @@ namespace DatingProj
         {
 
             //Database.SetInitializer(new DropCreateDatabaseAlways<ApplicationDbContext>());
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ApplicationDbContext>());
+            Database.SetInitializer(new MyInitializer());
             //Database.SetInitializer(new MyInitializer());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

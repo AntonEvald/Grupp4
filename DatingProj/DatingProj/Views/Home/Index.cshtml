@@ -7,15 +7,7 @@
     <div class="jumbotron">
         <h1>
             Welcome @Html.DisplayFor(model => model.user.Name)
-            @if (Model.user.UserPhoto == null)
-    {
-        <img src= style="width:160px;height:160px; background: #FFFFFF;
-            margin: auto;
-            -moz-border-radius: 60px;
-            border-radius: 100px;
-            padding: 6px;
-            box-shadow: 0px 0px 20px #888;" />
-}
+            
             <img src="@Url.Action("UserPhotos", "Home" )" style="width:160px;height:160px; background: #FFFFFF;
             margin: auto;
             -moz-border-radius: 60px;
@@ -26,31 +18,29 @@
         <p><a>@Html.ActionLink("Find gamers in your area now!", "Index", "Users", routeValues: null, htmlAttributes: new { id = "FindUsersLink" })</a></p>
     </div>
 
+    <div class="row">
+        @foreach (var user in Model.users)
+         {
+            if (user.Id != Model.user.Id)
+            {
+                <div class="col-md-4">
+                    <a href="@Url.Action("UserProfil", "Users", new { id = user.Id })">
+                        <img src="data:image;base64,@Convert.ToBase64String(user.UserPhoto)" style="width:200px;height:200px; background: #FFFFFF;
+                            margin: auto;
+                            -moz-border-radius: 60px;
+                            border-radius: 100px;
+                            padding: 6px;
+                            box-shadow: 0px 0px 20px #888;" />
 
-    foreach (var user in Model.users)
-    {
-        if (user.Id == Model.user.Id)
-        {
+                    </a>
 
-        }
-        else
-        {
-            <div class="col-md-4">
-                <a href="@Url.Action("UserProfil", "Users", new { id = user.Id })">
-                    <img src="data:image;base64,@Convert.ToBase64String(user.UserPhoto)" style="width:200px;height:200px; background: #FFFFFF;
-                    margin: auto;
-                    -moz-border-radius: 60px;
-                    border-radius: 100px;
-                    padding: 6px;
-                    box-shadow: 0px 0px 20px #888;" />
-
-                </a>
-
-            </div>
-        }
+                </div>
+            }
 
 
-    }
+         }
+    </div>
+
 
 }
 else
@@ -60,23 +50,28 @@ else
         <p class="lead">Register now to meet single gamers in your area today! As of today we have over 100 000 members looking for love!</p>
         <p><a>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</a></p>
     </div>
+    <div class="row">
+        @if (Model.users != null)
+         {
+             foreach (var user in Model.users)
+             {
+                <div class="col-md-4">
+                    <a href="@Url.Action("Register", "Account")">
+                        <img src="data:image;base64,@Convert.ToBase64String(user.UserPhoto)" style="width:200px;height:200px; background: #FFFFFF;
+                        margin: auto;
+                        -moz-border-radius: 60px;
+                        border-radius: 100px;
+                        padding: 6px;
+                        box-shadow: 0px 0px 20px #888;" />
 
-    foreach (var user in Model.users)
-    {
-            <div class="col-md-4">
-                <a href="@Url.Action("Register", "Account")">
-                    <img src="data:image;base64,@Convert.ToBase64String(user.UserPhoto)" style="width:200px;height:200px; background: #FFFFFF;
-                    margin: auto;
-                    -moz-border-radius: 60px;
-                    border-radius: 100px;
-                    padding: 6px;
-                    box-shadow: 0px 0px 20px #888;" />
+                    </a>
 
-                </a>
-
-            </div>
-        
+                </div>
 
 
-    }
+
+             }
+         }
+
+    </div>
 }

@@ -47,18 +47,16 @@ namespace DataBase.Models
     {
         protected override void Seed(ApplicationDbContext context)
         {
+            string path = Path.Combine(HttpRuntime.AppDomainAppPath, @"Images/noavatar.png");
+            var pic = File.ReadAllBytes(path);
             var store = new UserStore<ApplicationUser>(context);
             var userManager = new ApplicationUserManager(store);
-            var user = new ApplicationUser { UserName = "admin@mail.com", Email = "admin@mail.com" };
-            string filename = Path.Combine(HttpRuntime.AppDomainAppPath, "Images/NoImg.jpg");
-            byte[] imageData = null;
-            FileInfo fileInfo = new FileInfo(filename);
-            long imageFileLength = fileInfo.Length;
-            FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
-            BinaryReader br = new BinaryReader(fs);
-            imageData = br.ReadBytes((int)imageFileLength);
-            user.UserPhoto = imageData;
-            userManager.CreateAsync(user, "Password").Wait();
+            var user1 = new ApplicationUser { Name = "Admin Adminsson", UserName = "admin@mail.com", Email = "admin@mail.com", UserPhoto = pic};
+            var user2 = new ApplicationUser { Name = "Sven Svensson", UserName = "sven@mail.com", Email = "sven@mail.com", UserPhoto = pic };
+            var user3 = new ApplicationUser { Name = "Johan Johansson", UserName = "johan@mail.com", Email = "johan@mail.com", UserPhoto = pic };
+            userManager.CreateAsync(user1, "Asd123!").Wait();
+            userManager.CreateAsync(user2, "Asd123!").Wait();
+            userManager.CreateAsync(user3, "Asd123!").Wait();
 
             base.Seed(context);
 

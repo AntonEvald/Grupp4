@@ -62,7 +62,7 @@ namespace DatingProj.Controllers
 
                 if(userid == null)
                 {
-                    string filename = Path.Combine(HttpRuntime.AppDomainAppPath, "Images/NoImg.jpg");
+                    string filename = Path.Combine(HttpRuntime.AppDomainAppPath, "Images/noavatar.png");
                     byte[] imageData = null;
                     FileInfo fileInfo = new FileInfo(filename);
                     long imageFileLength = fileInfo.Length;
@@ -78,7 +78,7 @@ namespace DatingProj.Controllers
             }
             else
             {
-                string filename  = Path.Combine(HttpRuntime.AppDomainAppPath, "Images/NoImg.jpg");
+                string filename  = Path.Combine(HttpRuntime.AppDomainAppPath, "Images/noavatar.png");
                 byte[] imageData = null;
                 FileInfo fileInfo = new FileInfo(filename);
                 long imageFileLength = fileInfo.Length;
