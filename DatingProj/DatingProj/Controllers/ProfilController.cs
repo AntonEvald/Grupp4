@@ -41,7 +41,7 @@ namespace DatingProj.Controllers
            
                 var userName = User.Identity.Name;
                 var edit = db.Users.Single(x => x.UserName == userName);
-                if (TryUpdateModel(edit, "", new string[] {"UserName", "Name", "Description"}))
+                if (TryUpdateModel(edit, "", new string[] {"UserName", "Name", "Description", "Searchable"}))
                 {
                     db.SaveChanges();
                 }

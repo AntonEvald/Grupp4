@@ -51,9 +51,9 @@ namespace DataBase.Models
             var pic = File.ReadAllBytes(path);
             var store = new UserStore<ApplicationUser>(context);
             var userManager = new ApplicationUserManager(store);
-            var user1 = new ApplicationUser { Name = "Admin Adminsson", UserName = "admin@mail.com", Email = "admin@mail.com", UserPhoto = pic};
-            var user2 = new ApplicationUser { Name = "Sven Svensson", UserName = "sven@mail.com", Email = "sven@mail.com", UserPhoto = pic };
-            var user3 = new ApplicationUser { Name = "Johan Johansson", UserName = "johan@mail.com", Email = "johan@mail.com", UserPhoto = pic };
+            var user1 = new ApplicationUser { Name = "Admin Adminsson", UserName = "admin@mail.com", Email = "admin@mail.com", UserPhoto = pic, Searchable = true};
+            var user2 = new ApplicationUser { Name = "Sven Svensson", UserName = "sven@mail.com", Email = "sven@mail.com", UserPhoto = pic , Searchable = true};
+            var user3 = new ApplicationUser { Name = "Johan Johansson", UserName = "johan@mail.com", Email = "johan@mail.com", UserPhoto = pic, Searchable = true};
             userManager.CreateAsync(user1, "Asd123!").Wait();
             userManager.CreateAsync(user2, "Asd123!").Wait();
             userManager.CreateAsync(user3, "Asd123!").Wait();
