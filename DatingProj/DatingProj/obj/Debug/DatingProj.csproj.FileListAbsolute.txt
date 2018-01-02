@@ -451,7 +451,6 @@ C:\Users\phili\Source\Repos\Grupp4\DatingProj\DatingProj\bin\System.Web.WebPages
 C:\Users\phili\Source\Repos\Grupp4\DatingProj\DatingProj\bin\System.Web.WebPages.Razor.dll
 C:\Users\phili\Source\Repos\Grupp4\DatingProj\DatingProj\bin\WebGrease.dll
 C:\Users\phili\Source\Repos\Grupp4\DatingProj\DatingProj\bin\DataBase.pdb
-C:\Users\phili\Source\Repos\Grupp4\DatingProj\DatingProj\bin\DataBase.dll.config
 C:\Users\phili\Source\Repos\Grupp4\DatingProj\DatingProj\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\phili\Source\Repos\Grupp4\DatingProj\DatingProj\bin\Microsoft.Owin.xml
 C:\Users\phili\Source\Repos\Grupp4\DatingProj\DatingProj\bin\System.Web.Helpers.xml
@@ -874,3 +873,9 @@ C:\Users\Anton\Source\Repos\Grupp43\DatingProj\DatingProj\bin\Microsoft.AI.Depen
 C:\Users\Anton\Source\Repos\Grupp43\DatingProj\DatingProj\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\Anton\Source\Repos\Grupp43\DatingProj\DatingProj\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Anton\Source\Repos\Grupp43\DatingProj\DatingProj\bin\Microsoft.AI.Web.xml
+C:\Users\phili\Source\Repos\Grupp4\DatingProj\DatingProj\bin\System.Net.Http.Formatting.dll
+C:\Users\phili\Source\Repos\Grupp4\DatingProj\DatingProj\bin\System.Web.Http.dll
+C:\Users\phili\Source\Repos\Grupp4\DatingProj\DatingProj\bin\System.Web.Http.WebHost.dll
+C:\Users\phili\Source\Repos\Grupp4\DatingProj\DatingProj\bin\System.Net.Http.Formatting.xml
+C:\Users\phili\Source\Repos\Grupp4\DatingProj\DatingProj\bin\System.Web.Http.xml
+C:\Users\phili\Source\Repos\Grupp4\DatingProj\DatingProj\bin\System.Web.Http.WebHost.xml

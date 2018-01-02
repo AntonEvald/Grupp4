@@ -86,6 +86,8 @@ namespace DatingProj.Models
 
         [Display(Name = "UserPhoto")]
         public byte[] UserPhoto { get; set; }
+
+        public bool Searchable { get; set; }
     }
 
     public class ResetPasswordViewModel

@@ -95,7 +95,6 @@ C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DataBase\bin\Debug\System.Web.WebP
 C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DataBase\obj\Debug\Logic.csproj.CoreCompileInputs.cache
 C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DataBase\obj\Debug\DataBase.dll
 C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DataBase\obj\Debug\DataBase.pdb
-C:\Users\phili\Source\Repos\Grupp4\DatingProj\DataBase\bin\Debug\DataBase.dll.config
 C:\Users\phili\Source\Repos\Grupp4\DatingProj\DataBase\bin\Debug\DataBase.dll
 C:\Users\phili\Source\Repos\Grupp4\DatingProj\DataBase\bin\Debug\DataBase.pdb
 C:\Users\phili\Source\Repos\Grupp4\DatingProj\DataBase\bin\Debug\EntityFramework.dll
@@ -242,4 +241,11 @@ C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DataBase\bin\Debug\Microsoft.AspNe
 C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DataBase\bin\Debug\Microsoft.Owin.Security.Cookies.xml
 C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DataBase\bin\Debug\Microsoft.Owin.Security.OAuth.xml
 C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DataBase\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Andre\Source\Repos\Grupp4\DatingProj\DataBase\obj\Debug\Logic.csprojResolveAssemblyReference.cache
+C:\Users\phili\Source\Repos\Grupp4\DatingProj\DataBase\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\phili\Source\Repos\Grupp4\DatingProj\DataBase\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Users\phili\Source\Repos\Grupp4\DatingProj\DataBase\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+C:\Users\phili\Source\Repos\Grupp4\DatingProj\DataBase\bin\Debug\Newtonsoft.Json.dll
+C:\Users\phili\Source\Repos\Grupp4\DatingProj\DataBase\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\phili\Source\Repos\Grupp4\DatingProj\DataBase\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+C:\Users\phili\Source\Repos\Grupp4\DatingProj\DataBase\bin\Debug\Microsoft.Owin.Security.OAuth.xml
+C:\Users\phili\Source\Repos\Grupp4\DatingProj\DataBase\bin\Debug\Newtonsoft.Json.xml
