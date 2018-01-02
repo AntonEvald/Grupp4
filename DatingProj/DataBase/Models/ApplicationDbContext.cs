@@ -41,6 +41,8 @@ namespace DataBase.Models
         }
         public DbSet<Posts> Posts { get; set; }
         public DbSet<Friend> Friends { get; set; }
+
+      //  public System.Data.Entity.DbSet<DatingProj.Models.ApplicationUser> ApplicationUsers { get; set; }
     }
 
     public class MyInitializer : DropCreateDatabaseIfModelChanges<ApplicationDbContext>

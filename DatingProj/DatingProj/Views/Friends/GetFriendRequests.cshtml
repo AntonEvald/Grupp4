@@ -1,0 +1,21 @@
+﻿@model IEnumerable<DatingProj.Models.ApplicationUser>
+
+@{
+    ViewBag.Title = "GetFriendRequests";
+}
+
+<h2>FriendRequests</h2>
+
+
+<table class="table">
+    
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name) : @Html.ActionLink("Acceptera", "AcceptFriend", "Friends", new { id = item.Id }, new { })
+        </td>
+
+    </tr>
+}
+
+</table>

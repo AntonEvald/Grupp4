@@ -23,6 +23,7 @@ namespace DatingProj.Models
         public virtual ICollection<Posts> posts { get; set; }
         public virtual ICollection<Friend> Senders { get; set; }
         public virtual ICollection<Friend> Receivers { get; set; }
+        
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -50,6 +51,5 @@ namespace DatingProj.Models
         [Column(Order = 2)]
         public string FriendTo { get; set; }
     }
-
 
 }

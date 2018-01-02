@@ -13,14 +13,7 @@ namespace DatingProj.Controllers
     
     public class FriendsController : BaseController
     {
-        [HttpPost]
-        public void  SendFriendRequest(string id)
-        {
-
-            var you = db.Users.Single(x => x.Id == id);
-            var me = db.Users.Single(z => z.Id == User.Identity.GetUserId());
-        }
-
+     
         public ActionResult SendRequest(string id)
         {
            var Request = new Friend{ FriendFrom = User.Identity.GetUserId(), FriendTo = id, IsConfirmed = false};
@@ -29,12 +22,64 @@ namespace DatingProj.Controllers
             return RedirectToAction("UserProfil", "Users", new { id = id });
         }
 
-        public ActionResult Index()
+        public ActionResult FriendsList()
+        {
+            var Userid = User.Identity.GetUserId();
+            var Friend1 = db.Friends.Where(u => u.FriendTo == Userid && u.IsConfirmed == true).ToList();
+            var Friend2 = db.Friends.Where(u => u.FriendFrom == Userid && u.IsConfirmed == true).ToList();
+            var list = new List<ApplicationUser>();
+            foreach (var item in Friend1)
+            {
+                var a = item.FriendFrom;
+                var b = db.Users.Where(u => u.Id == a).ToList();
+                foreach (var z in b)
+                {
+                    list.Add(z);
+                }
+            }
+
+            foreach (var item in Friend2)
+            {
+                var a = item.FriendTo;
+                var b = db.Users.Where(u => u.Id == a).ToList();
+                foreach (var z in b)
+                {
+                    list.Add(z);
+                }
+            }
+            return View(list);
+        
+    }
+
+        public ActionResult AcceptFriend(string id)
+        {
+
+            var request = db.Friends.Single(x => x.FriendFrom == id);
+            request.IsConfirmed = true;
+            db.SaveChanges();
+
+            return RedirectToAction("GetFriendRequests","Friends");
+        }
+
+        public ActionResult GetFriendRequests()
         {
             var id = User.Identity.GetUserId();
-            var friends = db.Friends.Where(z => z.FriendTo == id && z.IsConfirmed == true).ToList();
-            return View(friends);
-
+            var Requests = db.Friends.Where(u => u.FriendTo == id && u.IsConfirmed == false).ToList();
+            var list = new List<ApplicationUser>();
+            foreach (var item in Requests)
+            {
+                var a = item.FriendFrom;
+                var b = db.Users.Where(u => u.Id == a).ToList();
+                foreach (var z in b)
+                {
+                    list.Add(z);
+                }
+            }
+            return View(list);
         }
+
+
     }
+
+
 }
