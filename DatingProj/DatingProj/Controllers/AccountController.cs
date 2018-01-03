@@ -162,6 +162,11 @@ namespace DatingProj.Controllers
                         imageData = binary.ReadBytes(poImgFile.ContentLength);
                     }
                 }
+                if (imageData.Length < 3)
+                {
+                    var path = Path.Combine(HttpRuntime.AppDomainAppPath, @"Images/noavatar.png");
+                    imageData = System.IO.File.ReadAllBytes(path);
+                }
                 var user = new ApplicationUser { Name = model.Name,UserName = model.Email, Email = model.Email };
                 user.UserPhoto = imageData;
                 user.Searchable = true;

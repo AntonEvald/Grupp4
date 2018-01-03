@@ -59,26 +59,13 @@ namespace DatingProj.Controllers
             if (User.Identity.IsAuthenticated)
             {
                 string userid = User.Identity.GetUserId();
-
-                if(userid == null)
-                {
-                    string filename = Path.Combine(HttpRuntime.AppDomainAppPath, "Images/noavatar.png");
-                    byte[] imageData = null;
-                    FileInfo fileInfo = new FileInfo(filename);
-                    long imageFileLength = fileInfo.Length;
-                    FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
-                    BinaryReader br = new BinaryReader(fs);
-                    imageData = br.ReadBytes((int)imageFileLength);
-
-                    return File(imageData, "image/png");
-                }
                 var bdUsers = HttpContext.GetOwinContext().Get<ApplicationDbContext>();
                 var userImage = bdUsers.Users.Where(x => x.Id == userid).FirstOrDefault();
                 return new FileContentResult(userImage.UserPhoto, "image/jpeg");
             }
             else
             {
-                string filename  = Path.Combine(HttpRuntime.AppDomainAppPath, "Images/noavatar.png");
+                string filename  = Path.Combine(HttpRuntime.AppDomainAppPath, @"Images/noavatar.png");
                 byte[] imageData = null;
                 FileInfo fileInfo = new FileInfo(filename);
                 long imageFileLength = fileInfo.Length;
