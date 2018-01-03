@@ -14,14 +14,18 @@ namespace DatingProj.Controllers
         public ActionResult Index(string searchString)
         {
             var users = db.Users.ToList();
+            List<Models.ApplicationUser> filteredBySearchable =  users.Where(User => User.Searchable == true).Cast<Models.ApplicationUser>().ToList();
             
-                if (!string.IsNullOrEmpty(searchString))
+            if (!string.IsNullOrEmpty(searchString))
                 {
-                    List<Models.ApplicationUser> filteredList = users.Where(User => User.Name.Contains(searchString)).Cast<Models.ApplicationUser>().ToList();
-                    return View(filteredList);
+                List<Models.ApplicationUser> filteredByNameAndSearchable = filteredBySearchable.Where(User => User.Name.Contains(searchString)).Cast<Models.ApplicationUser>().ToList();
+                   
+                    return View(filteredByNameAndSearchable);
                 }
-            return View(users.ToList());
+            return View(filteredBySearchable);
         }
+
+
         public ActionResult UserProfil(string id)
         {
 

@@ -9,9 +9,12 @@
 <h2> @Html.DisplayFor(model => model.Name)</h2>
 
 <div>
-    <h4>ApplicationUser</h4>
     
-    @if (Model.Senders.Any(u => u.FriendFrom == User.Identity.GetUserId()))
+    @if (Model.Senders.Any(u => u.FriendFrom == User.Identity.GetUserId() && Model.Senders.Any(x => x.IsConfirmed == false)))
+    {
+        <p>Friend Request pending</p>
+    }
+    else if (Model.Senders.Any(x => x.IsConfirmed == true))
     {
 
     }

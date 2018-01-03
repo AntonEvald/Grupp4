@@ -164,6 +164,7 @@ namespace DatingProj.Controllers
                 }
                 var user = new ApplicationUser { Name = model.Name,UserName = model.Email, Email = model.Email };
                 user.UserPhoto = imageData;
+                user.Searchable = true;
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

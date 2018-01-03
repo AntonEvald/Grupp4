@@ -1,0 +1,24 @@
+﻿@model List<DatingProj.Models.ApplicationUser>
+
+@{
+    ViewBag.Title = "FriendsList";
+}
+
+<h2>FriendsList</h2>
+
+<table class="table">
+    <tr>
+
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Name) : @Html.ActionLink("Go to Profil", "UserProfil", "Users", new { id = item.Id }, new { })
+
+        </td>
+    </tr>
+}
+
+</table>
