@@ -19,6 +19,7 @@ namespace DatingProj.Models
         public string Description { get; set; }
         public byte[] UserPhoto { get; set; }
         public bool Searchable { get; set; }
+        public string jaha { get; set; }
 
         public virtual ICollection<Posts> posts { get; set; }
         public virtual ICollection<Friend> Senders { get; set; }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -38,10 +39,10 @@ namespace DatingProj.Controllers
         [HttpPost]
         public ActionResult Edit(ApplicationUser user)
         {
-           
-                var userName = User.Identity.Name;
-                var edit = db.Users.Single(x => x.UserName == userName);
-                if (TryUpdateModel(edit, "", new string[] {"UserName", "Name", "Description", "Searchable"}))
+
+            var userName = User.Identity.Name;
+            var edit = db.Users.Single(x => x.UserName == userName);
+            if (TryUpdateModel(edit, "", new string[] {"UserName", "Name", "Description", "Searchable"}))
                 {
                     db.SaveChanges();
                 }
