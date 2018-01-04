@@ -51,7 +51,12 @@
 
         </div>
     </div>
-
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.ActionLink("Change your password", "ChangePassword", "Manage")
+        </div>
+    </div>
+    
     <div class="formgroup">
         @Html.LabelFor(model => model.Searchable, htmlAttributes: new { @class = "control-label col-md-2" })
         <div>
