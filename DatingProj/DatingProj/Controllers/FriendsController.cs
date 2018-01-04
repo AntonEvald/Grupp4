@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -51,10 +52,42 @@ namespace DatingProj.Controllers
         
     }
 
-        public ActionResult AcceptFriend(string id)
+        public FileContentResult CountFriendRequests()
         {
 
-            var request = db.Friends.Single(x => x.FriendFrom == id);
+            var id = User.Identity.GetUserId();
+            var requests = db.Friends.Where(u => u.FriendTo == id && u.IsConfirmed == false).ToList();
+            var a = requests.Count();
+            if (a > 0)
+            {
+                string filename = Path.Combine(HttpRuntime.AppDomainAppPath, "Images/NewFriendRequests.png");
+                byte[] imageData = null;
+                FileInfo fileInfo = new FileInfo(filename);
+                long imageFileLength = fileInfo.Length;
+                FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
+                BinaryReader br = new BinaryReader(fs);
+                imageData = br.ReadBytes((int)imageFileLength);
+
+                return File(imageData, "image/png");
+            }
+            else
+            {
+                string filename = Path.Combine(HttpRuntime.AppDomainAppPath, "Images/NoFriendRequests.png");
+                byte[] imageData = null;
+                FileInfo fileInfo = new FileInfo(filename);
+                long imageFileLength = fileInfo.Length;
+                FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
+                BinaryReader br = new BinaryReader(fs);
+                imageData = br.ReadBytes((int)imageFileLength);
+
+                return File(imageData, "image/png");
+            }
+        }
+
+        public ActionResult AcceptFriend(string id)
+        {
+            var Userid = User.Identity.GetUserId();
+            var request = db.Friends.Single(x => x.FriendFrom == id && x.FriendTo == Userid);
             request.IsConfirmed = true;
             db.SaveChanges();
 
