@@ -10,7 +10,13 @@
         @Html.ActionLink("Min profil", "Index", "Profil")
     </li>
     <li>
-        @Html.ActionLink("Min Vänlista", "Index", "Friends")
+        @Html.ActionLink("Mina Vän Förfrågningar", "GetFriendRequests", "Friends")
+    </li>
+    <li>
+         <img src="@Url.Action("CountFriendRequests", "Friends")" height="48" width="48"/>
+    </li>
+    <li>
+        @Html.ActionLink("Min Vänlista", "FriendsList", "Friends")
     </li>
     <li>
         @Html.ActionLink("Find users", "Index", "Users")
