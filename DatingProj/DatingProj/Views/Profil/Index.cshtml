@@ -1,5 +1,5 @@
 ﻿@using Microsoft.AspNet.Identity
-@model DatingProj.Models.ProfilViewModel
+@model DataBase.Models.ProfilViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -54,6 +54,8 @@
         $.ajax("api/Posts/List").then(function (Posts) {
             console.log(Posts);
         });
+
+
 
     </script>
 }

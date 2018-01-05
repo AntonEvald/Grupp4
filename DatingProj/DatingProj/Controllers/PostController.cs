@@ -14,15 +14,6 @@ namespace DatingProj.Controllers
     {
         // GET: Post
 
-        [HttpGet]
-        public List<Posts> Index(ApplicationUser user)
-        {
-            return new List<Posts>
-            {
-                
-            };
-
-        }
         public ActionResult Create()
         {
             return View();
