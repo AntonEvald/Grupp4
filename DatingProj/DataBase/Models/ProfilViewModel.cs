@@ -11,7 +11,7 @@ namespace DataBase.Models
     {
         public ApplicationUser User { get; set; }
         public  ICollection<Posts> Posts { get; set; }
-        public Posts post { get; set; }
+        public Posts Post { get; set; }
 
     }
 }

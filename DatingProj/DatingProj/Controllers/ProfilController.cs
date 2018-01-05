@@ -18,13 +18,12 @@ namespace DatingProj.Controllers
         // GET: Profil
         public ActionResult Index(string id)
         {
-
             var user = db.Users.Single(x => x.Id == id);
             return View(new ProfilViewModel
             {
                 User = user,
                 Posts = new List<Posts>(),
-                post = new Posts()
+                Post = new Posts()
 
             });
         }
