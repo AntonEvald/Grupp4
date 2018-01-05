@@ -62,7 +62,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to Profil", "Index")
+    @Html.ActionLink("Back to Profil", "Index", new { id = Model.User.Id })
 </div>
 
 @section Scripts {

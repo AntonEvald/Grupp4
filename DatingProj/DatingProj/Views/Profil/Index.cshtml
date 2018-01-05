@@ -35,10 +35,10 @@
         </p>
     }
 </div>
-    @Html.ActionLink("Create Post", "Create", "Post")
+    @Html.ActionLink("Create post", "Create", "Post", new { id = Model.User.Id })
 <div>
     <table class="table">
-      
+
         @foreach (var item in Model.Posts)
         {
             <tr>
@@ -46,7 +46,7 @@
                 <td> @Html.DisplayFor(modelItem => item.Text)</td>
             </tr>
         }
-    
+
     </table>
 </div>
 @section scripts {

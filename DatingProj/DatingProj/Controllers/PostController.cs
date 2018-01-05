@@ -14,9 +14,10 @@ namespace DatingProj.Controllers
     {
         // GET: Post
 
-        public ActionResult Create()
+        public ActionResult Create(string id)
         {
-            return View();
+            var user = db.Users.Single(x => x.Id == id);
+            return View(user);
         }
 
         /*[HttpPost]

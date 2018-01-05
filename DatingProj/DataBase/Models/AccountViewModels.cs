@@ -107,6 +107,8 @@ namespace DatingProj.Models
         [Display(Name = "Searchable")]
         public bool Searchable { get; set; }
 
+        public ApplicationUser User { get; set; }
+
 
     }
 

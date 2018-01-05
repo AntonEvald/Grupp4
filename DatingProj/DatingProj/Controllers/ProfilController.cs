@@ -38,6 +38,7 @@ namespace DatingProj.Controllers
             var search = user.Searchable;
             EditViewModel model = new EditViewModel
             {
+                User = user,
                 Searchable = search,
                 Description = desc,
                 Name = name,
@@ -74,7 +75,7 @@ namespace DatingProj.Controllers
                 }
             }      
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", db.Users.Single(x => x.UserName == User.Identity.Name));
 
         }
     }

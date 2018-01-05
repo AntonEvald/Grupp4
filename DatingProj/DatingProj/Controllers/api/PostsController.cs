@@ -20,5 +20,16 @@ namespace DatingProj.Controllers
                 return Posts;
             }
         }
+
+        public void Create(Posts post)
+        {
+            using (var db = new ApplicationDbContext())
+            {
+                db.Posts.Add(post);
+                db.SaveChanges();
+            }
+            Redirect("Index");
+            
+        }
     }
 }
