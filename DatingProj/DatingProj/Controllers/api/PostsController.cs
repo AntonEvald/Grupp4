@@ -21,11 +21,17 @@ namespace DatingProj.Controllers
             }
         }
 
-        public void Create(Posts post)
+        public void Create(CreateViewModel post)
         {
             using (var db = new ApplicationDbContext())
             {
-                db.Posts.Add(post);
+                Posts NewPost = new Posts
+                {
+                    Text = post.Post.Text,
+                    ToUser = post.ToUser,
+                    FromUser = post.Post.FromUser
+                };
+                db.Posts.Add(NewPost);
                 db.SaveChanges();
             }
             Redirect("Index");
