@@ -38,7 +38,6 @@ namespace DatingProj.Controllers
             var search = user.Searchable;
             EditViewModel model = new EditViewModel
             {
-                Email = userName,
                 Searchable = search,
                 Description = desc,
                 Name = name,
@@ -54,29 +53,26 @@ namespace DatingProj.Controllers
             var user = db.Users.Single(x => x.UserName == userName);
             byte[] imageData = null;
             HttpPostedFileBase poImgFile = Request.Files["EditPhoto"];
-            if(Request.Files.Count > 0)
+            if (Request.Files.Count > 0 && Request.Files[0].ContentLength > 0)
             {
                 using (var binary = new BinaryReader(poImgFile.InputStream))
                 {
                     imageData = binary.ReadBytes(poImgFile.ContentLength);
+                    user.UserPhoto = imageData;
+                    if (TryUpdateModel(user, "", new string[] { "Name", "Description", "Searchable", "UserPhoto" }))
+                    {
+                            db.SaveChanges();
+                    }
                 }
-            } else
-            {
-                imageData = user.UserPhoto;
+
             }
-
-
-            user.UserPhoto = imageData;
-            user.Name = model.Name;
-            user.Email = model.Email;
-            user.UserName = model.Email;
-            user.Description = model.Description;
-            user.Searchable = model.Searchable;
-
-            if (TryUpdateModel(user, "", new string[] {"Email", "UserName", "Name", "Description", "Searchable", "UserPhoto"}))
+            else
+            {
+                if (TryUpdateModel(user, "", new string[] { "Name", "Description", "Searchable" }))
                 {
                     db.SaveChanges();
                 }
+            }      
 
             return RedirectToAction("Index");
 
