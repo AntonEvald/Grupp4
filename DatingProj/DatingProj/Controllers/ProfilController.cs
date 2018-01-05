@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using DataBase.Models;
 using DatingProj.Models;
 using Microsoft.Ajax.Utilities;
 using Microsoft.AspNet.Identity;
@@ -14,18 +15,18 @@ namespace DatingProj.Controllers
 {
     public class ProfilController : BaseController
     {
-
-    
-
         // GET: Profil
-        public ActionResult Index()
+        public ActionResult Index(string id)
         {
- 
-                var userName = User.Identity.Name;
 
-                var user = db.Users.Single(x => x.UserName == userName);
-                return View(user);
+            var user = db.Users.Single(x => x.Id == id);
+            return View(new ProfilViewModel
+            {
+                User = user,
+                Posts = new List<Posts>(),
+                post = new Posts()
 
+            });
         }
 
         public ActionResult Edit()
