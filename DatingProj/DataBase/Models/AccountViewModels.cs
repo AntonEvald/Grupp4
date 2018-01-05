@@ -90,6 +90,30 @@ namespace DatingProj.Models
         public bool Searchable { get; set; }
     }
 
+    public class EditViewModel
+    {
+        [Required]
+        [EmailAddress]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "First and last name")]
+        public string Name { get; set; }
+
+        [Display(Name = "UserPhoto")]
+        public byte[] UserPhoto { get; set; }
+
+        [Display(Name = "Description")]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.")]
+        public string Description { get; set; }
+
+        [Display(Name = "Searchable")]
+        public bool Searchable { get; set; }
+
+
+    }
+
     public class ResetPasswordViewModel
     {
         [Required]
