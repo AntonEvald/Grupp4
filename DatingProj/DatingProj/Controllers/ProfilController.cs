@@ -14,18 +14,18 @@ namespace DatingProj.Controllers
 {
     public class ProfilController : BaseController
     {
-
-    
-
         // GET: Profil
         public ActionResult Index()
         {
- 
-                var userName = User.Identity.Name;
+            var userName = User.Identity.Name;
+            var user = db.Users.Single(x => x.UserName == userName);
+            return View(new ProfilViewModel
+            {
+                User = user,
+                Posts = new List<Posts>(),
+                Post = new Posts()
 
-                var user = db.Users.Single(x => x.UserName == userName);
-                return View(user);
-
+            });
         }
 
         public ActionResult Edit()
