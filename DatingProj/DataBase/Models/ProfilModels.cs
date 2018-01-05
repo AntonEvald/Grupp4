@@ -5,16 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using DatingProj.Models;
 
-namespace DataBase.Models
+namespace DatingProj.Models
 {
     public class ProfilViewModel
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public string Text { get; set; }
-        public DateTime Date { get; set; }
-        public virtual ApplicationUser FromUser { get; set; }
-        public virtual ApplicationUser ToUser { get; set; }
-
+        public ApplicationUser User { get; set; }
+        public IEnumerable<Posts> Posts { get; set; }
+        public Posts Post { get; set; }
     }
 }

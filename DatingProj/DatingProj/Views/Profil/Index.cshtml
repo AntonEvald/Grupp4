@@ -1,40 +1,59 @@
 ﻿@using Microsoft.AspNet.Identity
-@model DatingProj.Models.ApplicationUser
+@model DatingProj.Models.ProfilViewModel
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2> @Html.DisplayFor(model => model.Name)</h2>
-<img src="data:image;base64,@Convert.ToBase64String(Model.UserPhoto)" style="width:200px;height:200px; background: #FFFFFF;
+<h2> @Html.DisplayFor(model => model.User.Name)</h2>
+<img src="data:image;base64,@Convert.ToBase64String(Model.User.UserPhoto)" style="width:200px;height:200px; background: #FFFFFF;
                             margin: auto;
                             -moz-border-radius: 60px;
                             border-radius: 100px;
                             padding: 6px;
                             box-shadow: 0px 0px 20px #888;" />
+
+
+
 <div>
     <hr />
     <dl class="dl-horizontal">
 
         <dt>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayNameFor(model => model.User.Description)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Description)
+            @Html.DisplayFor(model => model.User.Description)
         </dd>
-
     </dl>
-    
-    @if (Model.Id == User.Identity.GetUserId())
+
+    @if (Model.User.Id == User.Identity.GetUserId())
     {
         <p>
             @Html.ActionLink("Edit profil", "Edit", "Profil")
         </p>
     }
-
-    <p>
-        @Html.ActionLink("Posts", "Index", "post", new { id = Model.Id }, new { })
-    </p>
 </div>
+    @Html.ActionLink("Create Post", "Create", "Post")
+<div>
+    <table class="table">
+      
+        @foreach (var item in Model.Posts)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.FromUser.Name)</td>
+                <td> @Html.DisplayFor(modelItem => item.Text)</td>
+            </tr>
+        }
+    
+    </table>
+</div>
+@section scripts {
+    <script type="text/javascript">
+        $.ajax("api/Posts/List").then(function (Posts) {
+            console.log(Posts);
+        });
 
+    </script>
+}
