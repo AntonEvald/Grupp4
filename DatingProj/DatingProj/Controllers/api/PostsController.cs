@@ -7,6 +7,7 @@ using System.Net.Http;
 using DatingProj.Models;
 using System.Web.Http;
 using DataBase.Models;
+using Microsoft.AspNet.Identity;
 
 namespace DatingProj.Controllers
 {
@@ -14,23 +15,24 @@ namespace DatingProj.Controllers
     {
 
 
-        public class PostModel
-        {
-            public string Text { get; set; }
-            public string FromUser { get; set; }
-            public string ToUser { get; set; }
-
-        }
-
-
-
         [HttpGet]
-        public List<Posts> List()
+        public List<PostModel> List()
         {
             using (var db = new ApplicationDbContext())
             {
+                var list = new List<Posts>();
                 var posts = db.Posts.ToList();
-                return posts;
+                foreach (var item in posts)
+                {
+                        list.Add(item);
+                }
+                return list.Select(post => new PostModel
+                    {
+                        Text = post.Text,
+                        FromUser = post.FromUser.Name,
+                        ToUser = post.ToUser.Id
+                    })
+                    .ToList();
             }
         }
 

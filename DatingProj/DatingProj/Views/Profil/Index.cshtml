@@ -41,10 +41,10 @@
     </div>
     <table class="table">
 
-        @foreach (var item in Model.Posts.Where(u => u.ToUser == Model.User))
+        @foreach (var item in Model.Posts.Where(u => u.ToUser == Model.User.Id))
         {
             <tr>
-                <td>@Html.DisplayFor(modelItem => item.FromUser.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.FromUser )</td>
                 <td> @Html.DisplayFor(modelItem => item.Text)</td>
             </tr>
         }
@@ -56,8 +56,8 @@
     var id = "@Model.User.Id";
 
         $.ajax("/api/Posts/List").then(function (posts) {
-        console.log(posts);
-    });
+            console.log(posts);
+        });
 
 
             $("#createBtn").click(function() {
@@ -70,7 +70,7 @@
                     type: "POST",
                     data: JSON.stringify(request),
                     success: function(response) {
-                        $("result").text(response.result);
+                        console.log("yes");
                     }
                 });
             });

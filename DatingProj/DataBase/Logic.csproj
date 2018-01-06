@@ -101,6 +101,7 @@
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PostModel.cs" />
     <Compile Include="Models\Posts.cs" />
     <Compile Include="Models\ProfilViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
