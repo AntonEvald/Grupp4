@@ -12,4 +12,10 @@ namespace DatingProj.Models
         public virtual ApplicationUser ToUser { get; set; }
 
     }
+
+    public class CreateViewModel
+    {
+        public Posts Post { get; set; }
+        public ApplicationUser ToUser { get; set; }
+    }
 }

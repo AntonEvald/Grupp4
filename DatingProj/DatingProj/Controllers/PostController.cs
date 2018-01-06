@@ -16,9 +16,21 @@ namespace DatingProj.Controllers
 
         public ActionResult Create(string id)
         {
-
-            return View();
+            var toUser = db.Users.Single(x => x.Id == id);
+            CreateViewModel model = new CreateViewModel()
+            {
+                Post = new Posts(),
+                ToUser = toUser
+            };
+            return View(model);
         }
 
+        /*[HttpPost]
+        public ActionResult Create(Posts post, string id)
+        {
+            var userName = User.Identity.Name;
+
+            var user = db.Users.Single(x => x.UserName == userName);
+        }*/
     }
 }
