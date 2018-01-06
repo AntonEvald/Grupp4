@@ -10,6 +10,6 @@ namespace DataBase.Models
     public class ProfilViewModel
     {
         public ApplicationUser User { get; set; }
-        public  ICollection<Posts> Posts { get; set; }
+        public  List<Posts> Posts { get; set; }
     }
 }

@@ -41,7 +41,7 @@
     </div>
     <table class="table">
 
-        @foreach (var item in Model.Posts)
+        @foreach (var item in Model.Posts.Where(u => u.ToUser == Model.User))
         {
             <tr>
                 <td>@Html.DisplayFor(modelItem => item.FromUser.Name)</td>
@@ -53,31 +53,33 @@
 </div>
 @section scripts {
     <script type="text/javascript">
+    var id = "@Model.User.Id";
+
         $.ajax("/api/Posts/List").then(function (posts) {
-            console.log(posts);
+        console.log(posts);
+    });
 
-        });
 
-        $("#createBtn").click(function() {
-            var request = new PostModel();
+            $("#createBtn").click(function() {
+                var request = new PostModel();
 
-            $.ajax({
-                url: "/api/Posts/PostMessage",
-                datatype: 'json',
-                contentType: "application/json",
-                type: "POST",
-                data: JSON.stringify(request),
-                success: function(response) {
-                    $("result").text(response.result);
-                }
+                $.ajax({
+                    url: "/api/Posts/PostMessage",
+                    datatype: 'json',
+                    contentType: "application/json",
+                    type: "POST",
+                    data: JSON.stringify(request),
+                    success: function(response) {
+                        $("result").text(response.result);
+                    }
+                });
             });
-        });
 
-        function PostModel() {
-            var self = this;
-            self.Text = $("#Text").val();
-            self.FromUser = "@User.Identity.GetUserId()";
-            self.ToUser = "@Model.User.Id";
-        }
-    </script>
+            function PostModel() {
+                var self = this;
+                self.Text = $("#Text").val();
+                self.FromUser = "@User.Identity.GetUserId()";
+                self.ToUser = "@Model.User.Id";
+            }
+        </script>
 }

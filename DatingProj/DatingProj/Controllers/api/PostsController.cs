@@ -23,13 +23,14 @@ namespace DatingProj.Controllers
         }
 
 
+
         [HttpGet]
-        public List<Posts> List(string id)
+        public List<Posts> List()
         {
             using (var db = new ApplicationDbContext())
             {
-                var Posts = db.Posts.Where(u => u.ToUser.Id == id).ToList();
-                return Posts;
+                var posts = db.Posts.ToList();
+                return posts;
             }
         }
 
