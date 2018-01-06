@@ -6,7 +6,6 @@
 
 <h2>Create</h2>
 
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -25,16 +24,25 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input id="createBtn" type="button" value="Save with AJAX" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to Posts", "Index")
+    @Html.ActionLink("Profil", "Index", "Profil")
 </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+@section scripts {
+    <script type="text/javascript">
+        $("#createBtn").click(function() {
+            var request = new PostModel();
+        });
+
+        function PostModel() {
+            var self = this;
+
+        }
+    </script>
 }

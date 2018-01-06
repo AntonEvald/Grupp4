@@ -23,8 +23,7 @@ namespace DatingProj.Controllers
             return View(new ProfilViewModel
             {
                 User = user,
-                Posts = new List<Posts>(),
-                post = new Posts()
+                Posts = new List<Posts>()
 
             });
         }

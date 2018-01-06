@@ -14,17 +14,11 @@ namespace DatingProj.Controllers
     {
         // GET: Post
 
-        public ActionResult Create()
+        public ActionResult Create(string id)
         {
+
             return View();
         }
 
-        /*[HttpPost]
-        public ActionResult Create(Posts post, string id)
-        {
-            var userName = User.Identity.Name;
-
-            var user = db.Users.Single(x => x.UserName == userName);
-        }*/
     }
 }

@@ -35,10 +35,14 @@
         </p>
     }
 </div>
-    @Html.ActionLink("Create Post", "Create", "Post")
+    @Html.ActionLink("Create Post", "Create", "Post", new { id = Model.User.Id }, new { })
 <div>
+    <div>
+        <textarea id="Text"></textarea>
+        <input id="createBtn" type="button" value="Send"/>
+    </div>
     <table class="table">
-      
+
         @foreach (var item in Model.Posts)
         {
             <tr>
@@ -46,16 +50,36 @@
                 <td> @Html.DisplayFor(modelItem => item.Text)</td>
             </tr>
         }
-    
+
     </table>
 </div>
 @section scripts {
     <script type="text/javascript">
-        $.ajax("api/Posts/List").then(function (Posts) {
-            console.log(Posts);
+        $.ajax("/api/Posts/List").then(function (posts) {
+            console.log(posts);
+
         });
 
+        $("#createBtn").click(function() {
+            var request = new PostModel();
 
+            $.ajax({
+                url: "/api/Posts/PostMessage",
+                datatype: 'json',
+                contentType: "application/json",
+                type: "POST",
+                data: JSON.stringify(request),
+                success: function(response) {
+                    $("result").text(response.result);
+                }
+            });
+        });
 
+        function PostModel() {
+            var self = this;
+            self.Text = $("#Text").val();
+            self.FromUser = "@User.Identity.GetUserId()";
+            self.ToUser = "@Model.User.Id";
+        }
     </script>
 }
