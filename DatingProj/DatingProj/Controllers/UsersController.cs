@@ -25,21 +25,5 @@ namespace DatingProj.Controllers
             return View(filteredBySearchable);
         }
 
-
-        public ActionResult UserProfil(string id)
-        {
-
-            if (id == User.Identity.GetUserId())
-            {
-                return RedirectToAction("Index", "Profil");
-            }
-            else
-            {
-                var userprofile = db.Users.Single(x => x.Id == id);
-                return View(userprofile);
-            }
-        }
-      
-      
     }
 }

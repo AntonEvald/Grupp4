@@ -24,7 +24,7 @@
             if (user.Id != Model.user.Id)
             {
                 <div class="col-md-4">
-                    <a href="@Url.Action("UserProfil", "Users", new { id = user.Id })">
+                    <a href="@Url.Action("Index", "Profil", new { id = user.Id })">
                         <img src="data:image;base64,@Convert.ToBase64String(user.UserPhoto)" style="width:200px;height:200px; background: #FFFFFF;
                             margin: auto;
                             -moz-border-radius: 60px;

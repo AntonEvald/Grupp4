@@ -20,7 +20,7 @@ namespace DatingProj.Controllers
            var Request = new Friend{ FriendFrom = User.Identity.GetUserId(), FriendTo = id, IsConfirmed = false};
             db.Friends.Add(Request);
             db.SaveChanges();
-            return RedirectToAction("UserProfil", "Users", new { id = id });
+            return RedirectToAction("Index", "Profil", new { id = id });
         }
 
         public ActionResult FriendsList()
