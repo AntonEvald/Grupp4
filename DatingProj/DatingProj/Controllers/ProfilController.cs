@@ -18,12 +18,12 @@ namespace DatingProj.Controllers
         // GET: Profil
         public ActionResult Index(string id)
         {
+
             var user = db.Users.Single(x => x.Id == id);
             return View(new ProfilViewModel
             {
                 User = user,
-                Posts = new List<Posts>(),
-                Post = new Posts()
+                Posts = new List<PostModel>()
 
             });
         }
@@ -38,7 +38,6 @@ namespace DatingProj.Controllers
             var search = user.Searchable;
             EditViewModel model = new EditViewModel
             {
-                User = user,
                 Searchable = search,
                 Description = desc,
                 Name = name,
@@ -75,7 +74,7 @@ namespace DatingProj.Controllers
                 }
             }      
 
-            return RedirectToAction("Index", db.Users.Single(x => x.UserName == User.Identity.Name));
+            return RedirectToAction("Index");
 
         }
     }
