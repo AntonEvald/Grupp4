@@ -69,11 +69,14 @@
                 console.log(data)
                 for(var i=0;i<data.length;i++)
                 {
-                    var tr="<tr>";
-                    var td1="<td>"+data[i].fromUser+"</td>";
-                    var td2="<td>"+data[i].text+"</td></tr>";
+                    if (data[i].toUser == id) {
+                        var tr="<tr>";
+                        var td1="<td>"+data[i].fromUser+"</td>";
+                        var td2="<td>"+data[i].text+"</td></tr>";
 
-                    $("#mytable").append(tr+td1+td2); 
+                        $("#mytable").append(tr+td1+td2); 
+                    }
+
 
                 }   
             });
