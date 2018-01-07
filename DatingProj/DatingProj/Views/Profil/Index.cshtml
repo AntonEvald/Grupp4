@@ -50,15 +50,9 @@
         <textarea id="Text"></textarea>
         <input id="createBtn" type="button" value="Send" />
     </div>
-    <table class="table">
+    <table class="table" id="mytable">
 
-        @foreach (var item in Model.Posts.Where(u => u.ToUser == Model.User))
-        {
-            <tr>
-                <td>@Html.DisplayFor(modelItem => item.FromUser.Name)</td>
-                <td> @Html.DisplayFor(modelItem => item.Text)</td>
-            </tr>
-        }
+
 
     </table>
 </div>
@@ -66,8 +60,17 @@
     <script type="text/javascript">
     var id = "@Model.User.Id";
 
-        $.ajax("/api/Posts/List").then(function (posts) {
-        console.log(posts);
+        $.ajax("/api/Posts/List").then(function (data) {
+            console.log(data)
+            for(var i=0;i<data.length;i++)
+            {
+                var tr="<tr>";
+                var td1="<td>"+data[i].fromUser+"</td>";
+                var td2="<td>"+data[i].text+"</td></tr>";
+
+                $("#mytable").append(tr+td1+td2); 
+
+            }   
     });
 
 
@@ -81,7 +84,6 @@
                     type: "POST",
                     data: JSON.stringify(request),
                     success: function(response) {
-                        $("result").text(response.result);
                     }
                 });
             });
