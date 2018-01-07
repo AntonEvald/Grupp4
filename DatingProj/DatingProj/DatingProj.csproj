@@ -225,6 +225,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -287,7 +288,6 @@
     <Content Include="Views\Friends\FriendsList.cshtml" />
     <Content Include="Views\Friends\GetFriendRequests.cshtml" />
     <Content Include="Views\Shared\Friends.cshtml" />
-    <Content Include="Views\Profil\Posts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
