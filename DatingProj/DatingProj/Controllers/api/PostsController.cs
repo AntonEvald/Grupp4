@@ -28,6 +28,7 @@ namespace DatingProj.Controllers
                 }
                 return list.Select(post => new PostModel
                     {
+                        Id = post.Id,
                         Text = post.Text,
                         FromUser = post.FromUser.Name,
                         ToUser = post.ToUser.Id

@@ -23,10 +23,11 @@ namespace DatingProj.Controllers
             return View(new ProfilViewModel
             {
                 User = user,
-                Posts = new List<PostModel>()
+                Posts = new List<Posts>()
 
             });
         }
+
 
         public ActionResult Edit()
         {
