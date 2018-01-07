@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Linq;
+using System.Security.Principal;
 
 namespace DatingProj.Models
 {
-    public class Posts
+    public class Posts 
     {
 
         public int Id { get; set; }
