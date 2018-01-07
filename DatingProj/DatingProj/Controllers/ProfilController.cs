@@ -18,12 +18,27 @@ namespace DatingProj.Controllers
         // GET: Profil
         public ActionResult Index(string id)
         {
-
+            
             var user = db.Users.Single(x => x.Id == id);
+            var Userid = User.Identity.GetUserId();
+            var friendList = db.Friends.Where(f => f.FriendFrom == Userid || f.FriendTo == Userid).ToList();
+            var list = new List<string>();
+            foreach (var item in friendList)
+            {
+                if(item.FriendFrom != Userid)
+                {
+                    list.Add(item.FriendFrom);
+                }
+                if(item.FriendTo != Userid)
+                {
+                    list.Add(item.FriendTo);
+                }
+            }
             return View(new ProfilViewModel
             {
                 User = user,
-                Posts = new List<Posts>()
+                Posts = new List<Posts>(),
+                Friends = list
 
             });
         }
@@ -74,7 +89,7 @@ namespace DatingProj.Controllers
                 }
             }      
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { id = User.Identity.GetUserId() });
 
         }
     }

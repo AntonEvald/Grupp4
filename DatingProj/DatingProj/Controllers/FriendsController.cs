@@ -14,13 +14,28 @@ namespace DatingProj.Controllers
     
     public class FriendsController : BaseController
     {
-     
+        
+
         public ActionResult SendRequest(string id)
         {
-           var Request = new Friend{ FriendFrom = User.Identity.GetUserId(), FriendTo = id, IsConfirmed = false};
-            db.Friends.Add(Request);
-            db.SaveChanges();
-            return RedirectToAction("Index", "Profil", new { id = id });
+            var Userid = User.Identity.GetUserId();
+            var friendList = db.Friends.Where(f => f.FriendFrom == Userid || f.FriendTo == Userid).ToList();
+            
+            var Request = new Friend { FriendFrom = User.Identity.GetUserId(), FriendTo = id };
+
+            try
+            {
+                db.Friends.Add(Request);
+                db.SaveChanges();
+                return RedirectToAction("Index", "Profil", new { id = User.Identity.GetUserId() });
+
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+
         }
 
         public ActionResult FriendsList()

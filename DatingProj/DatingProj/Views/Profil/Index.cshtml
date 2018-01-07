@@ -1,6 +1,5 @@
 ﻿@using Microsoft.AspNet.Identity
 @model DataBase.Models.ProfilViewModel
-
 @{
     ViewBag.Title = "Index";
 }
@@ -14,7 +13,7 @@
                             box-shadow: 0px 0px 20px #888;" />
 
 
-
+@Html.ValidationSummary(true)
 <div>
     <hr />
     <dl class="dl-horizontal">
@@ -27,6 +26,17 @@
             @Html.DisplayFor(model => model.User.Description)
         </dd>
     </dl>
+        
+   
+    @if (Model.User.Id != User.Identity.GetUserId())
+    {
+        if (!Model.Friends.Contains(Model.User.Id))
+        {
+        <p>
+            @Html.ActionLink("Send Friend Request", "SendRequest", "Friends", new { id = Model.User.Id }, null)
+        </p>
+        }
+      }
 
     @if (Model.User.Id == User.Identity.GetUserId())
     {
@@ -35,9 +45,10 @@
         </p>
     }
 
+
     <div>
         <textarea id="Text"></textarea>
-        <input id="createBtn" type="button" value="Send"/>
+        <input id="createBtn" type="button" value="Send" />
     </div>
     <table class="table">
 
@@ -81,5 +92,5 @@
                 self.FromUser = "@User.Identity.GetUserId()";
                 self.ToUser = "@Model.User.Id";
             }
-        </script>
+    </script>
 }

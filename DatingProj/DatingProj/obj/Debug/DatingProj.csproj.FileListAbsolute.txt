@@ -1016,3 +1016,8 @@ C:\Users\Anton\Source\Repos\Grupp44\DatingProj\DatingProj\obj\Debug\DatingProj.I
 C:\Users\Anton\Source\Repos\Grupp44\DatingProj\DatingProj\obj\Debug\DatingProj.Internationalization.AppResources.sv.resources
 C:\Users\Anton\Source\Repos\Grupp44\DatingProj\DatingProj\obj\Debug\DatingProj.csproj.GenerateResource.Cache
 C:\Users\Anton\Source\Repos\Grupp44\DatingProj\DatingProj\obj\Debug\sv\DatingProj.resources.dll
+C:\Users\phili\Source\Repos\Grupp4\DatingProj\DatingProj\bin\sv\DatingProj.resources.dll
+C:\Users\phili\Source\Repos\Grupp4\DatingProj\DatingProj\obj\Debug\DatingProj.Internationalization.AppResources.resources
+C:\Users\phili\Source\Repos\Grupp4\DatingProj\DatingProj\obj\Debug\DatingProj.Internationalization.AppResources.sv.resources
+C:\Users\phili\Source\Repos\Grupp4\DatingProj\DatingProj\obj\Debug\DatingProj.csproj.GenerateResource.Cache
+C:\Users\phili\Source\Repos\Grupp4\DatingProj\DatingProj\obj\Debug\sv\DatingProj.resources.dll
