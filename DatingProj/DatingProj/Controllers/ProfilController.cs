@@ -75,7 +75,7 @@ namespace DatingProj.Controllers
                 }
             }      
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Profil", new { id = user.Id });
 
         }
     }
