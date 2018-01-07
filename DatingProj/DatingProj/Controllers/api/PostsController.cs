@@ -7,6 +7,7 @@ using System.Net.Http;
 using DatingProj.Models;
 using System.Web.Http;
 using DataBase.Models;
+using Microsoft.Ajax.Utilities;
 using Microsoft.AspNet.Identity;
 
 namespace DatingProj.Controllers
@@ -54,5 +55,4 @@ namespace DatingProj.Controllers
 
         }
     }
-
 }

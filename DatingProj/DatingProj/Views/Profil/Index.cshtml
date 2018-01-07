@@ -58,20 +58,27 @@
 </div>
 @section scripts {
     <script type="text/javascript">
-    var id = "@Model.User.Id";
+        var id = "@Model.User.Id";
 
-        $.ajax("/api/Posts/List").then(function (data) {
-            console.log(data)
-            for(var i=0;i<data.length;i++)
-            {
-                var tr="<tr>";
-                var td1="<td>"+data[i].fromUser+"</td>";
-                var td2="<td>"+data[i].text+"</td></tr>";
+        $(document).ready(function() {
+            getNew();
+        });
 
-                $("#mytable").append(tr+td1+td2); 
+        function getNew() {
+            $.ajax("/api/Posts/List").then(function (data) {
+                console.log(data)
+                for(var i=0;i<data.length;i++)
+                {
+                    var tr="<tr>";
+                    var td1="<td>"+data[i].fromUser+"</td>";
+                    var td2="<td>"+data[i].text+"</td></tr>";
 
-            }   
-    });
+                    $("#mytable").append(tr+td1+td2); 
+
+                }   
+            });
+        }
+      
 
 
             $("#createBtn").click(function() {
@@ -83,7 +90,10 @@
                     contentType: "application/json",
                     type: "POST",
                     data: JSON.stringify(request),
-                    success: function(response) {
+                    success: function (response) {
+                        $("#mytable").empty();
+                        $("#Text").val("");
+                        getNew();
                     }
                 });
             });
