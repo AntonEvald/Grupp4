@@ -1,6 +1,5 @@
 ﻿@using Microsoft.AspNet.Identity
 @model DataBase.Models.ProfilViewModel
-
 @{
     ViewBag.Title = "Index";
 }
@@ -14,7 +13,7 @@
                             box-shadow: 0px 0px 20px #888;" />
 
 
-
+@Html.ValidationSummary(true)
 <div>
     <hr />
     <dl class="dl-horizontal">
@@ -27,62 +26,71 @@
             @Html.DisplayFor(model => model.User.Description)
         </dd>
     </dl>
+        
+   
+    @if (Model.User.Id != User.Identity.GetUserId())
+    {
+        if (!Model.Friends.Contains(Model.User.Id))
+        {
+        <p>
+            @Html.ActionLink("Send Friend Request", "SendRequest", "Friends", new { id = Model.User.Id }, null)
+        </p>
+        }
+      }
 
     @if (Model.User.Id == User.Identity.GetUserId())
     {
         <p>
             @Html.ActionLink("Edit profil", "Edit", "Profil")
-           
         </p>
     }
-    
+
+
     <div>
         <textarea id="Text"></textarea>
-        <input id="createBtn" type="button" value="Send"/>
+        <input id="createBtn" type="button" value="Send" />
     </div>
-    <div>
-        <table class="table" id ="mytable">
+    <table class="table">
 
-        </table>
-    </div>
+        @foreach (var item in Model.Posts.Where(u => u.ToUser == Model.User))
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.FromUser.Name)</td>
+                <td> @Html.DisplayFor(modelItem => item.Text)</td>
+            </tr>
+        }
+
+    </table>
 </div>
 @section scripts {
     <script type="text/javascript">
-        var id = "@Model.User.Id";
+    var id = "@Model.User.Id";
 
-        $.ajax("/api/Posts/List/").then(function(data) {
-            console.log(data);
-            for (var i = 0; i < data.length; i++) {
-                var tr = "<tr>";
-                var td1 = "<td>" + data[i].fromUser + "</td>";
-                var td2 = "<td>" + data[i].text + "</td></tr>";
+        $.ajax("/api/Posts/List").then(function (posts) {
+        console.log(posts);
+    });
 
-                $("#mytable").append(tr + td1 + td2);
 
-            }
-        });
+            $("#createBtn").click(function() {
+                var request = new PostModel();
 
-        $("#createBtn").click(function() {
-            var request = new PostModel();
-
-            $.ajax({
-                url: "/api/Posts/PostMessage",
-                datatype: 'json',
-                contentType: "application/json",
-                type: "POST",
-                data: JSON.stringify(request),
-                success: function(response) {
-                    console.log("yes");
-                }
-
+                $.ajax({
+                    url: "/api/Posts/PostMessage",
+                    datatype: 'json',
+                    contentType: "application/json",
+                    type: "POST",
+                    data: JSON.stringify(request),
+                    success: function(response) {
+                        $("result").text(response.result);
+                    }
+                });
             });
-        });
 
-        function PostModel() {
-            var self = this;
-            self.Text = $("#Text").val();
-            self.FromUser = "@User.Identity.GetUserId()";
-            self.ToUser = "@Model.User.Id";
-        }
+            function PostModel() {
+                var self = this;
+                self.Text = $("#Text").val();
+                self.FromUser = "@User.Identity.GetUserId()";
+                self.ToUser = "@Model.User.Id";
+            }
     </script>
 }

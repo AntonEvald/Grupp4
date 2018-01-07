@@ -11,6 +11,9 @@ namespace DataBase.Models
     public class ProfilViewModel
     {
         public ApplicationUser User { get; set; }
-        public  List<Posts> Posts { get; set; }
+        public List<Posts> Posts { get; set; }
+        public List <string> Friends { get; set; }
     }
+    
 }
+

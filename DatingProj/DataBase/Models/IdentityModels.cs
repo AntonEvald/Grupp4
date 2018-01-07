@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+
 using DataBase.Models;
 
 namespace DatingProj.Models
@@ -42,7 +43,7 @@ namespace DatingProj.Models
 
     public class Friend
     {
-        public int ID { get; set; }
+        public string  Id { get; set; }
         public bool IsConfirmed { get; set; }
         [Key]
         [Column(Order = 1)]
