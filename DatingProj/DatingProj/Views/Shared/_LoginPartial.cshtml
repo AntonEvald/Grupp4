@@ -8,16 +8,16 @@
 
 <ul class="nav navbar-nav navbar-right">
     <li>
-        @Html.ActionLink("Min profil", "Index", "Profil", new { id = User.Identity.GetUserId() }, new { })
+        @Html.ActionLink("My profil", "Index", "Profil", new { id = User.Identity.GetUserId() }, new { })
     </li>
     <li>
-        @Html.ActionLink("Mina Vänförfrågningar", "GetFriendRequests", "Friends")
+        @Html.ActionLink("Friend Requests", "GetFriendRequests", "Friends")
     </li>
     <li>
         <img src="@Url.Action("CountFriendRequests", "Friends")" height="48" width="48" />
     </li>
     <li>
-        @Html.ActionLink("Min Vänlista", "FriendsList", "Friends")
+        @Html.ActionLink("My Friends", "FriendsList", "Friends")
     </li>
     <li>
         @Html.ActionLink("Find users", "Index", "Users")
