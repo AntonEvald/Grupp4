@@ -17,26 +17,29 @@
         @Html.ActionLink(AppResources.Goback, "Index")
     </p>
 }
-<table class="table">
-    <tr>
-
-        <th>
-            <h3>@AppResources.Name</h3>
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-
+    <table class="table">
         <tr>
 
-            <td>
-                <img class="Img-Profile" src="data:image;base64,@Convert.ToBase64String(item.UserPhoto)"/>
-                @Html.DisplayFor(modelItem => item.Name) : @Html.ActionLink(AppResources.Goto, "Index", "Profil", new { id = item.Id }, new { })
-
-            </td>
+            <th>
+                <h3>@AppResources.Name</h3>
+            </th>
+            <th></th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model)
+         {
+            if (item.UserName != User.Identity.Name)
+            {
+                <tr>
+
+                    <td>
+                        <img class="Img-Profile" src="data:image;base64,@Convert.ToBase64String(item.UserPhoto)" />
+                        @Html.DisplayFor(modelItem => item.Name) : @Html.ActionLink(AppResources.Goto, "Index", "Profil", new { id = item.Id }, new { })
+
+                    </td>
+                </tr>
+            }
+
+         }
+
+    </table>
