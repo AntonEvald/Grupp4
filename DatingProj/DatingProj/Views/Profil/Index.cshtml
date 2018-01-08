@@ -26,13 +26,21 @@
    
     @if (Model.User.Id != User.Identity.GetUserId())
     {
-        if (!Model.Friends.Contains(Model.User.Id))
+        if (!Model.FriendRequests.Contains(Model.User.Id))
         {
         <p>
             @Html.ActionLink("Send Friend Request", "SendRequest", "Friends", new { id = Model.User.Id }, null)
         </p>
+        } else if (Model.AcceptedFriends.Contains(Model.User.Id))
+        {
+
+        } else 
+        {
+            <p>
+                Friend request sent!
+            </p>
         }
-      }
+    }
 
     @if (Model.User.Id == User.Identity.GetUserId())
     {

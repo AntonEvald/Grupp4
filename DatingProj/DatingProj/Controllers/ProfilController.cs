@@ -23,23 +23,33 @@ namespace DatingProj.Controllers
             var Userid = User.Identity.GetUserId();
             var friendList = db.Friends.Where(f => f.FriendFrom == Userid || f.FriendTo == Userid).ToList();
             var list = new List<string>();
+            var AcceptedList = new List<string>();
             foreach (var item in friendList)
             {
                 if(item.FriendFrom != Userid)
                 {
                     list.Add(item.FriendFrom);
+                    if (item.IsConfirmed)
+                    {
+                        AcceptedList.Add(item.FriendFrom);
+                    }
                 }
                 if(item.FriendTo != Userid)
                 {
                     list.Add(item.FriendTo);
+                    if (item.IsConfirmed)
+                    {
+                        AcceptedList.Add(item.FriendTo);
+                    }
                 }
             }
+            
             return View(new ProfilViewModel
             {
                 User = user,
                 Posts = new List<Posts>(),
-                Friends = list
-
+                FriendRequests = list,
+                AcceptedFriends = AcceptedList
             });
         }
 
