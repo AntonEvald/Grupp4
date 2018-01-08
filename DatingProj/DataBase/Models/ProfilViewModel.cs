@@ -12,8 +12,8 @@ namespace DataBase.Models
     {
         public ApplicationUser User { get; set; }
         public List<Posts> Posts { get; set; }
-        public List <string> Friends { get; set; }
+        public List<string> FriendRequests { get; set; }
+        public List<string> AcceptedFriends { get; set; }
     }
-    
 }
 

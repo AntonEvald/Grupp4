@@ -5,12 +5,7 @@
 }
 
 <h2> @Html.DisplayFor(model => model.User.Name)</h2>
-<img src="data:image;base64,@Convert.ToBase64String(Model.User.UserPhoto)" style="width:200px;height:200px; background: #FFFFFF;
-                            margin: auto;
-                            -moz-border-radius: 60px;
-                            border-radius: 100px;
-                            padding: 6px;
-                            box-shadow: 0px 0px 20px #888;" />
+<img class="Img-Profile" src="data:image;base64,@Convert.ToBase64String(Model.User.UserPhoto)"/>
 
 
 @Html.ValidationSummary(true)
@@ -30,13 +25,21 @@
    
     @if (Model.User.Id != User.Identity.GetUserId())
     {
-        if (!Model.Friends.Contains(Model.User.Id))
+        if (!Model.FriendRequests.Contains(Model.User.Id))
         {
         <p>
             @Html.ActionLink("Send Friend Request", "SendRequest", "Friends", new { id = Model.User.Id }, null)
         </p>
+        } else if (Model.AcceptedFriends.Contains(Model.User.Id))
+        {
+
+        } else 
+        {
+            <p>
+                Friend request sent!
+            </p>
         }
-      }
+    }
 
     @if (Model.User.Id == User.Identity.GetUserId())
     {

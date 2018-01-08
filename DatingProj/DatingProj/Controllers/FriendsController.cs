@@ -27,7 +27,7 @@ namespace DatingProj.Controllers
             {
                 db.Friends.Add(Request);
                 db.SaveChanges();
-                return RedirectToAction("Index", "Profil", new { id = User.Identity.GetUserId() });
+                return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
 
             }
             catch (Exception)
