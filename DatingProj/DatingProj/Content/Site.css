@@ -33,3 +33,11 @@ textarea {
     padding: 6px;
     box-shadow: 0px 0px 20px #888;
 }
+
+.navbar-inverse {
+    background-color: #333c3a !important;
+}
+
+.navbar {
+    background-color: #333c3a !important;
+}
