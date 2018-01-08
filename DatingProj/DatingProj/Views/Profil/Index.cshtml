@@ -50,7 +50,7 @@
 
 
     <div>
-        <textarea id="Text"></textarea>
+        <textarea id="Text" maxlength="250"></textarea>
         <input id="createBtn" type="button" value="Send" />
     </div>
     <table class="table" id="mytable">
@@ -77,7 +77,7 @@
                         var td1="<td>"+data[i].fromUser+"</td>";
                         var td2="<td>"+data[i].text+"</td></tr>";
 
-                        $("#mytable").append(tr+td1+td2); 
+                        $("#mytable").prepend(tr+td1+td2); 
                     }
 
 
