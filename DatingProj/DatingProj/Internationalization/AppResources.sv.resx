@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Goback" xml:space="preserve">
-    <value>Gå tillbaka till listan</value>
+    <value>Gå tillbaka till lista</value>
   </data>
   <data name="Goto" xml:space="preserve">
     <value>Gå till profil</value>
