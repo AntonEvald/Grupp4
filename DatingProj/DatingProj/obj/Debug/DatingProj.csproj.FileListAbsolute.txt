@@ -1035,7 +1035,6 @@ C:\Users\Anton\Source\Repos\Grupp42\DatingProj\DatingProj\bin\ApplicationInsight
 C:\Users\Anton\Source\Repos\Grupp42\DatingProj\DatingProj\bin\DatingProj.dll.config
 C:\Users\Anton\Source\Repos\Grupp42\DatingProj\DatingProj\bin\DatingProj.dll
 C:\Users\Anton\Source\Repos\Grupp42\DatingProj\DatingProj\bin\DatingProj.pdb
-C:\Users\Anton\Source\Repos\Grupp42\DatingProj\DatingProj\bin\sv\DatingProj.resources.dll
 C:\Users\Anton\Source\Repos\Grupp42\DatingProj\DatingProj\bin\roslyn\csc.exe
 C:\Users\Anton\Source\Repos\Grupp42\DatingProj\DatingProj\bin\roslyn\csc.exe.config
 C:\Users\Anton\Source\Repos\Grupp42\DatingProj\DatingProj\bin\roslyn\csc.rsp
@@ -1156,10 +1155,8 @@ C:\Users\Anton\Source\Repos\Grupp42\DatingProj\DatingProj\bin\Microsoft.AI.Serve
 C:\Users\Anton\Source\Repos\Grupp42\DatingProj\DatingProj\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Anton\Source\Repos\Grupp42\DatingProj\DatingProj\bin\Microsoft.AI.Web.xml
 C:\Users\Anton\Source\Repos\Grupp42\DatingProj\DatingProj\obj\Debug\DatingProj.csprojResolveAssemblyReference.cache
-C:\Users\Anton\Source\Repos\Grupp42\DatingProj\DatingProj\obj\Debug\DatingProj.Internationalization.AppResources.resources
-C:\Users\Anton\Source\Repos\Grupp42\DatingProj\DatingProj\obj\Debug\DatingProj.Internationalization.AppResources.sv.resources
-C:\Users\Anton\Source\Repos\Grupp42\DatingProj\DatingProj\obj\Debug\DatingProj.csproj.GenerateResource.Cache
 C:\Users\Anton\Source\Repos\Grupp42\DatingProj\DatingProj\obj\Debug\DatingProj.csproj.CoreCompileInputs.cache
-C:\Users\Anton\Source\Repos\Grupp42\DatingProj\DatingProj\obj\Debug\sv\DatingProj.resources.dll
 C:\Users\Anton\Source\Repos\Grupp42\DatingProj\DatingProj\obj\Debug\DatingProj.dll
 C:\Users\Anton\Source\Repos\Grupp42\DatingProj\DatingProj\obj\Debug\DatingProj.pdb
+C:\Users\anton\Source\Repos\Grupp42\DatingProj\DatingProj\bin\sv\DataBase.resources.dll
+C:\Users\anton\Source\Repos\Grupp42\DatingProj\DatingProj\bin\en\DataBase.resources.dll

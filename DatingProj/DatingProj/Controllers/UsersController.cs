@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.Ajax.Utilities;
@@ -23,6 +25,19 @@ namespace DatingProj.Controllers
                     return View(filteredByNameAndSearchable);
                 }
             return View(filteredBySearchable);
+        }
+
+        public ActionResult ChangeLanguage(string lang)
+        {
+            if(lang != null)
+            {
+                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(lang);
+                Thread.CurrentThread.CurrentCulture = new CultureInfo(lang);
+            }
+            HttpCookie cookie = new HttpCookie("Language");
+            cookie.Value = lang;
+            Response.Cookies.Add(cookie);
+            return RedirectToAction("Index");
         }
 
     }

@@ -337,3 +337,11 @@ C:\Users\Anton\Source\Repos\Grupp42\DatingProj\DataBase\obj\Debug\Logic.csprojRe
 C:\Users\Anton\Source\Repos\Grupp42\DatingProj\DataBase\obj\Debug\Logic.csproj.CoreCompileInputs.cache
 C:\Users\Anton\Source\Repos\Grupp42\DatingProj\DataBase\obj\Debug\DataBase.dll
 C:\Users\Anton\Source\Repos\Grupp42\DatingProj\DataBase\obj\Debug\DataBase.pdb
+C:\Users\anton\Source\Repos\Grupp42\DatingProj\DataBase\obj\Debug\DataBase.Resources.AppResources.resources
+C:\Users\anton\Source\Repos\Grupp42\DatingProj\DataBase\obj\Debug\Logic.csproj.GenerateResource.Cache
+C:\Users\anton\Source\Repos\Grupp42\DatingProj\DataBase\bin\Debug\sv\DataBase.resources.dll
+C:\Users\anton\Source\Repos\Grupp42\DatingProj\DataBase\obj\Debug\DataBase.Resources.AppResources.sv.resources
+C:\Users\anton\Source\Repos\Grupp42\DatingProj\DataBase\obj\Debug\sv\DataBase.resources.dll
+C:\Users\anton\Source\Repos\Grupp42\DatingProj\DataBase\bin\Debug\en\DataBase.resources.dll
+C:\Users\anton\Source\Repos\Grupp42\DatingProj\DataBase\obj\Debug\DataBase.Resources.AppResources.en.resources
+C:\Users\anton\Source\Repos\Grupp42\DatingProj\DataBase\obj\Debug\en\DataBase.resources.dll
