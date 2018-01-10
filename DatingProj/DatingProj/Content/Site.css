@@ -35,9 +35,25 @@ textarea {
 }
 
 .navbar-inverse {
-    background-color: #333c3a !important;
+    background-color: lightgray !important;
 }
 
-.navbar {
-    background-color: #333c3a !important;
+.nav.navbar-nav.navbar-right li a {
+    color: black;
+}
+
+.nav.navbar-nav.navbar-right li a:hover {
+    color: white;
+}
+
+.nav.navbar-nav li a {
+    color: black;
+}
+
+.nav.navbar-nav li a:hover {
+    color: white;
+}
+
+a.navbar-brand {
+    color: black;
 }
